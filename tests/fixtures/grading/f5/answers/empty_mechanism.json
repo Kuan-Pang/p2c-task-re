@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "mechanism_primary": "   ",
+    "key_entities": [
+      "CD22",
+      "ITIM motif",
+      "SHP-1"
+    ]
+  },
+  "rationale": "Blocking the receptor raises engulfment, the motif mutant copies it, and the phosphatase binds only the intact motif."
+}

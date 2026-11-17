@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "arms": {
+      "LPS + anti-TLR4": "lost",
+      "LPS + anti-CD14": "unchanged",
+      "LPS + polymyxin B": "lost",
+      "LPS + IFN-gamma priming": "increased"
+    }
+  },
+  "rationale": "TLR4-MD-2 is the only receptor for LPS here, so an antibody that blocks it leaves nothing to signal through and TNF never rises above the unstimulated baseline. Polymyxin B gets to the same place from the other side by sequestering lipid A. CD14 only matters when ligand is scarce, and 100 ng/ml is far from scarce, so that arm sits on top of the reference. Interferon-gamma priming adds receptor rather than a second stimulus, so the same dose drives a larger response."
+}

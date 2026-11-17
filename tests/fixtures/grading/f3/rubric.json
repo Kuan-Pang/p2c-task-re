@@ -1,0 +1,72 @@
+{
+  "task_id": "fixture-f3-fwd-01",
+  "family": "F3",
+  "direction": "forward",
+  "tau": 0.7,
+  "w_core": 0.6,
+  "rationale_word_cap": 250,
+  "core": {
+    "type": "ranking",
+    "arms": [
+      "IL-6",
+      "IL-1beta",
+      "TGF-beta",
+      "TNF-alpha"
+    ],
+    "critical_top": true
+  },
+  "criteria": [
+    {
+      "id": "c0",
+      "section": "cue",
+      "text": "Notes that NF-kB activation is the step the ranking turns on.",
+      "points": 0,
+      "core": false,
+      "capability": "comparison",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "NF-kB activation is the step that drives the proliferative response"
+      }
+    },
+    {
+      "id": "c1",
+      "section": "step 1",
+      "text": "Puts IL-1beta and TNF-alpha in one tie set because the premises give them equal NF-kB activation at the doses used.",
+      "points": 3,
+      "core": false,
+      "capability": "comparison",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "IL-1beta and TNF-alpha activate NF-kB to the same degree at the doses used"
+      }
+    },
+    {
+      "id": "c2",
+      "section": "step 2",
+      "text": "Ranks TGF-beta last because it arrests the cell cycle rather than driving proliferation.",
+      "points": 3,
+      "core": false,
+      "capability": "direction",
+      "step": 2,
+      "grounding": {
+        "source": "instruction",
+        "quote": "TGF-beta drives the cells into a myofibroblast state and arrests the cell cycle"
+      }
+    },
+    {
+      "id": "c3",
+      "section": "step 3",
+      "text": "Places IL-6 between the NF-kB cytokines and TGF-beta on its roughly half-size STAT3-driven effect.",
+      "points": 2,
+      "core": false,
+      "capability": "comparison",
+      "step": 3,
+      "grounding": {
+        "source": "instruction",
+        "quote": "raises EdU incorporation about half as much as NF-kB activation does"
+      }
+    }
+  ]
+}

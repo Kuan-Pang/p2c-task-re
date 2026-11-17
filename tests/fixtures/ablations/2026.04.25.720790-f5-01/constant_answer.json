@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "mechanism_primary": "The effect runs through the NF-kB pathway in CD8+ T cells.",
+    "key_entities": [
+      "NF-kB",
+      "PRMT7",
+      "CD8+ T cells"
+    ]
+  },
+  "rationale": "NF-kB signalling explains the differences between the arms."
+}

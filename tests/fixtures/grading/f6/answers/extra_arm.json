@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "arms": {
+      "CM from untreated macrophages": "unchanged",
+      "CM from IL-4-treated macrophages": "increased",
+      "CM from IL-4 + STAT6 inhibitor macrophages": "unchanged",
+      "CM from IL-4-treated Tgfb1-KO macrophages": "unchanged",
+      "CM from IL-13-treated macrophages": "increased"
+    },
+    "state": "an IL-4-polarised, TGF-beta1-secreting macrophage"
+  },
+  "rationale": "IL-4 polarises through STAT6 and the polarised cells secrete TGF-beta1, which raises collagen; the other media carry none. IL-13 uses the same receptor chain, so it would do the same."
+}

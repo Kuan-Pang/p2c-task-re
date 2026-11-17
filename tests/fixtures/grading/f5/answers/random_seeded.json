@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "mechanism_primary": "Phenylalanine recruits injected debris through HEK293 clearance of the lectin.",
+    "key_entities": [
+      "phenylalanine",
+      "HEK293",
+      "debris"
+    ]
+  },
+  "rationale": "Entities and wording drawn at random from the question text with seed 2030; no derivation."
+}

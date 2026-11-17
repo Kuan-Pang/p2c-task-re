@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.2d1 20170631//EN" "JATS-archivearticle1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="article" dtd-version="1.2d1" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="publisher-id">BIORXIV</journal-id>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="doi">10.64898/2026.01.01.999001</article-id>
+<article-version>1.2</article-version>
+<title-group>
+<article-title>IL-2 drives <italic>Foxp3</italic> expression in CD4<sup>+</sup> T cells</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author"><name><surname>Doe</surname><given-names>Jane</given-names></name><xref ref-type="aff" rid="a1">1</xref></contrib>
+<aff id="a1"><label>1</label><institution>Nowhere Institute</institution></aff>
+</contrib-group>
+<abstract>
+<title>Abstract</title>
+<p>Interleukin-2 (IL-2) signalling through STAT5 is required for regulatory T cell identity. Here we show that IL-2 induces <italic>Foxp3</italic> in na&#x00EF;ve CD4<sup>+</sup> T cells.</p>
+</abstract>
+</article-meta>
+</front>
+<body>
+<sec id="s1">
+<title>Introduction</title>
+<p>Regulatory T cells (Tregs) depend on IL-2 for survival<sup><xref ref-type="bibr" rid="c1">1</xref>,<xref ref-type="bibr" rid="c2">2</xref></sup>. TGF-&#x03B2; also contributes (<xref ref-type="bibr" rid="c3">Smith et al., 2020</xref>).</p>
+</sec>
+<sec id="s2">
+<title>Results</title>
+<p>We first asked whether IL-2 alone is sufficient.</p>
+<sec id="s2a">
+<title>IL-2 induces Foxp3 in a dose-dependent manner</title>
+<p>Treatment with 10&#x2013;100 U/ml IL-2 increased the frequency of Foxp3<sup>+</sup> cells from 2% to 35% (<xref ref-type="fig" rid="fig1">Fig. 1A</xref>), while IFN-&#x03B3; levels were unchanged. CD8<sup>+</sup> T cells did not respond.</p>
+<fig id="fig1" position="float" fig-type="figure">
+<label>Figure 1.</label>
+<caption><title>IL-2 induces Foxp3.</title><p>(A) Frequency of Foxp3<sup>+</sup> cells after 72 h with IL-2 (mean &#x00B1; SD, <italic>n</italic> = 3). CO<sub>2</sub> was 5%.</p></caption>
+<graphic xlink:href="999001v2_fig1.tif"/>
+</fig>
+</sec>
+<sec id="s2b">
+<title>STAT5 is required</title>
+<p>Blocking STAT5 with an inhibitor abolished the effect; data are available at <ext-link ext-link-type="uri" xlink:href="https://example.org/data">example.org/data</ext-link>.</p>
+</sec>
+</sec>
+<sec id="s3">
+<label>3.</label>
+<title>Materials and methods</title>
+<sec id="s3a">
+<title>Cell culture</title>
+<p>Cells were cultured at 37&#x00B0;C in RPMI-1640.</p>
+</sec>
+</sec>
+<sec id="s4">
+<title>Discussion</title>
+<p>IL-2 is sufficient to induce Foxp3 in vitro; its role <italic>in vivo</italic> remains to be tested <sup>[<xref ref-type="bibr" rid="c2">2</xref>&#x2013;<xref ref-type="bibr" rid="c4">4</xref>]</sup>.</p>
+</sec>
+</body>
+<back>
+<ack><title>Acknowledgements</title><p>We thank the flow core.</p></ack>
+<sec id="s5">
+<title>Funding</title>
+<p>Funded by a made-up grant.</p>
+</sec>
+<sec id="s6">
+<fig id="figs1" position="float" fig-type="figure">
+<label>Supplementary Figure S1.</label>
+<caption><p>Gating strategy for CD4<sup>+</sup>CD25<sup>+</sup> cells.</p></caption>
+<graphic xlink:href="999001v2_figs1.tif"/>
+</fig>
+</sec>
+<ref-list>
+<title>References</title>
+<ref id="c1"><label>1.</label><mixed-citation>A reference that must not appear in paper.txt.</mixed-citation></ref>
+</ref-list>
+</back>
+</article>

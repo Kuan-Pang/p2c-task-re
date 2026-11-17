@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "arms": {
+      "LPS + anti-TLR4": "lost",
+      "LPS + anti-CD14": "unchanged",
+      "LPS + polymyxin B": "lost",
+      "LPS + IFN-gamma priming": "increased"
+    }
+  },
+  "rationale": "The co-receptor CD14 concentrates LPS and hands it to TLR4; in this preparation blocking CD14 lowers the response to 1 ng/ml LPS but has no effect at 100 ng/ml. Polymyxin B binds the lipid A moiety of LPS and keeps it away from any receptor."
+}

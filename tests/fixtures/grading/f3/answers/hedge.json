@@ -1,0 +1,17 @@
+{
+  "answer": {
+    "ranking": [
+      [
+        "IL-1beta",
+        "TNF-alpha"
+      ],
+      [
+        "IL-6"
+      ],
+      [
+        "TGF-beta"
+      ]
+    ]
+  },
+  "rationale": "IL-1beta and TNF-alpha may be equal or IL-1beta may be stronger; IL-6 could be second or last depending on how much STAT3 contributes here; TGF-beta might arrest the cycle or might drive myofibroblast proliferation. The ranking given is one of several defensible ones."
+}

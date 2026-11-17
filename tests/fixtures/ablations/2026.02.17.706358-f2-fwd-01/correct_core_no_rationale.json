@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "arms": {
+      "pERK_after_Akti": "unchanged",
+      "pAkt_after_UO126": "unchanged",
+      "pAkt_after_Akti": "decreased",
+      "pERK_after_UO126": "decreased"
+    }
+  },
+  "rationale": ""
+}

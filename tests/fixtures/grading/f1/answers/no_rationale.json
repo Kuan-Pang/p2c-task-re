@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "markers": {
+      "TCF1": "up",
+      "Granzyme B": "down",
+      "Ki67": "up",
+      "KLRG1": "unchanged",
+      "CD44": "unchanged",
+      "IFN-gamma": "unchanged"
+    }
+  },
+  "rationale": ""
+}

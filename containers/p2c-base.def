@@ -1,0 +1,51 @@
+# Apptainer recipe for the p2c base image, the container of the `singularity` profile (PLAN §9).
+#
+# Not built yet: ILC has no Apptainer (docs/ilc_apptainer_request.md), so the `local` profile runs trials
+# without a container for now (src/p2c_task_re/harbor_env.py). Once Apptainer is installed:
+#
+#   apptainer build images/p2c-base-$(date +%Y-%m-%d).sif containers/p2c-base.def
+#   sha256sum images/p2c-base-<date>.sif        # recorded in the dataset manifest
+#
+# A built image is never overwritten. A release builds the same recipe as an OCI image for the `cloud`
+# profile and pins it by digest.
+#
+# What the image provides, and why:
+#   python3 + the judge SDKs   tests/test.sh runs `python3 grade.py`; the pins equal uv.lock's
+#                              (tests/test_harbor.py checks they agree)
+#   /opt/harbor-server venv    uvicorn + fastapi for Harbor's in-container server; its bootstrap.sh
+#                              re-installs them on every start unless this venv already has them
+#   tmux, asciinema            the same bootstrap installs them otherwise
+#   /app/output                the answer artifact directory, present even when the agent writes nothing
+
+Bootstrap: docker
+From: debian:trixie-slim
+
+%post
+    set -eu
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update
+    apt-get install -y --no-install-recommends \
+        ca-certificates python3 python3-pip python3-venv tmux asciinema
+    rm -rf /var/lib/apt/lists/*
+
+    python3 -m pip install --no-cache-dir --break-system-packages \
+        anthropic==2.9.0 \
+        openai==3.52.0
+
+    python3 -m venv /opt/harbor-server
+    /opt/harbor-server/bin/pip install --no-cache-dir \
+        uvicorn==0.54.0 \
+        fastapi==0.163.1
+
+    mkdir -p /app/output /logs /tests /solution
+    chmod 777 /app /app/output /logs
+
+%environment
+    export LC_ALL=C.UTF-8
+
+%labels
+    org.p2c.recipe containers/p2c-base.def
+
+%help
+    Base image for p2c-task-re Harbor tasks (no tools, no network isolation): python3 with the
+    anthropic and openai SDKs for the grader, and Harbor's server dependencies.

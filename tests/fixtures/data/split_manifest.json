@@ -1,0 +1,10 @@
+{
+  "schema_version": "mcq_split_v1",
+  "fractions": {"train": 0.8, "dev": 0.1, "test": 0.1},
+  "papers": [
+    {"paper_id": "paper_example_1", "family_id": "family_example_1", "split": "train", "doi": "10.64898/2026.05.31.727600", "version": "1.1"},
+    {"paper_id": "paper_example_2", "family_id": "family_example_1", "split": "train", "doi": "10.64898/2026.05.31.727600", "version": "1.2"},
+    {"paper_id": "paper_example_3", "family_id": "family_example_2", "split": "dev", "doi": "10.64898/2026.01.01.999001", "version": "1.2"},
+    {"paper_id": "paper_example_4", "family_id": "family_example_3", "split": "test", "doi": "10.1101/2025.12.30.700001", "version": "1.1"}
+  ]
+}

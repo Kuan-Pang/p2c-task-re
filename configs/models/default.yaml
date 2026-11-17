@@ -1,0 +1,29 @@
+# Model roster (PLAN §3). Swap a role from the command line:
+#   uv run p2c-pipeline ... 'models.roles.critic=${models.gpt}'
+# No temperature or top_p: Sonnet 5.5 rejects non-default sampling, so repeated samples are repeated calls.
+sonnet: &sonnet
+  provider: anthropic
+  model: claude-sonnet-5-5
+  effort: high
+  max_tokens: 32000
+  price_per_mtok: {input: 2.0, output: 10.0}
+
+gpt: &gpt
+  provider: openai
+  model: gpt-6.1-sol            # confirmed present in the account's model list (2026-11-16)
+  effort: high
+  max_tokens: 32000
+  price_per_mtok: {input: 2.0, output: 10.0}    # developers.openai.com/api/docs/models/gpt-6.1-sol (2026-11-16)
+
+roles:
+  generator: *sonnet
+  critic: *sonnet
+  adversary: *sonnet
+  checker: [*gpt, *sonnet]
+  panel: [*gpt, *sonnet]
+  judge: *sonnet
+  judge_regrade: *gpt
+  heldout: null                 # named at M3; must lie outside panel
+
+# Server-side refusal fallback only where the answering model's identity does not matter.
+refusal_fallback: [generator, critic, adversary]

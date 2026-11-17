@@ -1,0 +1,79 @@
+{
+  "task_id": "fixture-f6-fwd-01",
+  "family": "F6",
+  "direction": "forward",
+  "tau": 0.7,
+  "w_core": 0.6,
+  "rationale_word_cap": 250,
+  "core": {
+    "type": "arm_enum",
+    "values": [
+      "increased",
+      "decreased",
+      "unchanged"
+    ],
+    "arms": [
+      "CM from untreated macrophages",
+      "CM from IL-4-treated macrophages",
+      "CM from IL-4 + STAT6 inhibitor macrophages",
+      "CM from IL-4-treated Tgfb1-KO macrophages"
+    ],
+    "critical": [
+      "CM from IL-4-treated macrophages"
+    ]
+  },
+  "criteria": [
+    {
+      "id": "c0",
+      "section": "cue",
+      "text": "Notes that TGF-beta1 is the only factor in the medium that moves collagen I.",
+      "points": 0,
+      "core": false,
+      "capability": "control-logic",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "TGF-beta1 is the only factor in this medium that raises fibroblast collagen I"
+      }
+    },
+    {
+      "id": "c1",
+      "section": "hop 1",
+      "text": "Carries the STAT6 dependence of IL-4 polarisation through to the medium: no polarisation means no TGF-beta1 to transfer.",
+      "points": 3,
+      "core": false,
+      "capability": "control-logic",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "a STAT6 inhibitor blocks that polarisation completely"
+      }
+    },
+    {
+      "id": "c2",
+      "section": "hop 2",
+      "text": "Uses the Tgfb1-KO arm to show that the collagen response is carried by TGF-beta1 itself rather than by polarisation in general.",
+      "points": 3,
+      "core": false,
+      "capability": "mechanism",
+      "step": 2,
+      "grounding": {
+        "source": "instruction",
+        "quote": "Tgfb1-KO macrophages secrete none whatever they are treated with"
+      }
+    },
+    {
+      "id": "c3",
+      "section": "state",
+      "text": "Describes the IL-4-treated macrophages as polarised by IL-4 through STAT6 and secreting TGF-beta1.",
+      "points": 2,
+      "core": false,
+      "capability": "mechanism",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "The polarised macrophages secrete TGF-beta1"
+      }
+    }
+  ]
+}

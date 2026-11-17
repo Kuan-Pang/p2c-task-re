@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "arms": {
+      "LPS + anti-TLR4": "increased",
+      "LPS + anti-CD14": "lost",
+      "LPS + polymyxin B": "increased",
+      "LPS + IFN-gamma priming": "increased"
+    }
+  },
+  "rationale": "Answer drawn at random from the three allowed values with seed 2027; no derivation."
+}

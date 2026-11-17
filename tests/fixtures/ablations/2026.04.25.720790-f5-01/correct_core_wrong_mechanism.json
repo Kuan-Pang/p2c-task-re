@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "mechanism_primary": "PRMT7 restrains NF-kB non-catalytically: the PRMT7 protein itself binds p65/RelA and holds it in the cytoplasm, so the restraint is set by how much PRMT7 protein is present and is relieved only when the protein is removed (gene deletion or PROTAC degradation), not when its methyltransferase activity is blocked.",
+    "key_entities": [
+      "PRMT7 protein abundance (non-catalytic scaffold function)",
+      "p65/RelA",
+      "cytoplasmic sequestration, blocked nuclear translocation",
+      "methyltransferase activity dispensable",
+      "protein removal (deletion, PROTAC) versus catalytic-site occupancy"
+    ]
+  },
+  "rationale": "PRMT7 belongs to a redundant family, and PRMT5 and PRMT1 cover the same substrates, so losing its catalytic output changes nothing measurable; that is why the inhibitor arm is flat. The degrader works because degradation is simply a stronger form of inhibition than occupying an active site with a reversible ligand, and three days of exposure drives inhibition towards completion. The deletion sits at the same end of that scale. Nothing more specific about p65 is needed to account for the ordering of the three arms."
+}

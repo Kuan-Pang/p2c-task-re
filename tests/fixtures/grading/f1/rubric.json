@@ -1,0 +1,81 @@
+{
+  "task_id": "fixture-f1-fwd-01",
+  "family": "F1",
+  "direction": "forward",
+  "tau": 0.7,
+  "w_core": 0.6,
+  "rationale_word_cap": 250,
+  "core": {
+    "type": "marker_directions",
+    "classes": [
+      "up",
+      "down",
+      "unchanged"
+    ],
+    "markers": [
+      "TCF1",
+      "Granzyme B",
+      "Ki67",
+      "KLRG1",
+      "CD44",
+      "IFN-gamma"
+    ],
+    "critical": [
+      "Granzyme B"
+    ]
+  },
+  "criteria": [
+    {
+      "id": "c0",
+      "section": "cue",
+      "text": "Notes that the day-8 chromatin accessibility data are the evidence the marker panel has to be read from.",
+      "points": 0,
+      "core": false,
+      "capability": "direction",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "ATAC-seq at day 8 shows that Prmt7-deficient (Prmt7-KO) cells carry newly accessible chromatin"
+      }
+    },
+    {
+      "id": "c1",
+      "section": "step 1",
+      "text": "Uses the newly accessible Tcf7 chromatin in Prmt7-KO cells to conclude that TCF1 is higher than in wild-type cells.",
+      "points": 3,
+      "core": false,
+      "capability": "direction",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "newly accessible chromatin at the Tcf7 locus"
+      }
+    },
+    {
+      "id": "c2",
+      "section": "step 2",
+      "text": "Uses the closed Gzmb chromatin, rather than the larger expansion, to conclude that granzyme B is lower in Prmt7-KO cells.",
+      "points": 3,
+      "core": false,
+      "capability": "mechanism",
+      "step": 2,
+      "grounding": {
+        "source": "instruction",
+        "quote": "closed chromatin at the Gzmb locus"
+      }
+    },
+    {
+      "id": "c3",
+      "section": "step 3",
+      "text": "Explains that KLRG1, CD44 and interferon-gamma are unchanged because the premises report no genotype difference for them.",
+      "points": 2,
+      "core": false,
+      "capability": "comparison",
+      "step": 3,
+      "grounding": {
+        "source": "instruction",
+        "quote": "per-cell interferon-gamma production is the same in the two genotypes"
+      }
+    }
+  ]
+}

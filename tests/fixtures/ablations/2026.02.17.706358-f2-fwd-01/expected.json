@@ -1,0 +1,138 @@
+{
+  "task_id": "2026.02.17.706358-f2-fwd-01",
+  "family": "F2",
+  "tau": 0.7,
+  "w_core": 0.6,
+  "judge_points_total": 10,
+  "note": "Verdicts are what a careful judge should return per criterion id under the judge protocol in docs/task_format.md section 6 (one criterion at a time, evidence quote must occur verbatim and outside masked spans, a hedge does not satisfy a criterion). Scores are recomputed from those verdicts by the formulas in section 6.",
+  "gold": {
+    "file": "../../../../examples/tasks/2026.02.17.706358-f2-fwd-01/tests/gold.json",
+    "class": "must_pass",
+    "criteria": {
+      "c1": "yes",
+      "c2": "yes",
+      "c3": "yes",
+      "c4": "yes",
+      "c5": "yes"
+    },
+    "consistency": "no_contradiction",
+    "s_core": 1.0,
+    "s_judge": 1.0,
+    "s": 1.0,
+    "pass": true
+  },
+  "ablations": {
+    "gold_paraphrase.json": {
+      "class": "must_pass",
+      "criteria": {
+        "c1": "yes",
+        "c2": "yes",
+        "c3": "yes",
+        "c4": "yes",
+        "c5": "yes"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 1.0,
+      "s_judge": 1.0,
+      "s": 1.0,
+      "pass": true,
+      "why": "Same four values as gold; every rubric step is argued in different words, so each criterion has a quotable, unmasked sentence."
+    },
+    "wrong_core_flipped.json": {
+      "class": "must_fail",
+      "criteria": {
+        "c1": "no",
+        "c2": "no",
+        "c3": "no",
+        "c4": "no",
+        "c5": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 0.0,
+      "s_judge": 0.0,
+      "s": 0.0,
+      "pass": false,
+      "why": "Flipped core: all four values wrong, including every critical arm, so s_core = 0. The rationale asserts crosstalk and a wash-out story and earns nothing."
+    },
+    "textbook_prior.json": {
+      "class": "must_fail",
+      "criteria": {
+        "c1": "no",
+        "c2": "no",
+        "c3": "no",
+        "c4": "no",
+        "c5": "yes"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 0.0,
+      "s_judge": 0.2,
+      "s": 0.08,
+      "pass": false,
+      "why": "What a model says from priors alone: canonical crosstalk plus feedback rebound. Both critical cross-pathway arms wrong, so s_core = 0; only the on-target criterion is earned."
+    },
+    "constant_answer.json": {
+      "class": "must_fail",
+      "criteria": {
+        "c1": "no",
+        "c2": "no",
+        "c3": "no",
+        "c4": "no",
+        "c5": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 0.0,
+      "s_judge": 0.0,
+      "s": 0.0,
+      "pass": false,
+      "why": "Best constant enum policy plus the stem's own mediator noun. It wins the two on-target arms but loses two critical arms, so s_core = 0."
+    },
+    "correct_core_wrong_mechanism.json": {
+      "class": "must_not_pass",
+      "criteria": {
+        "c1": "no",
+        "c2": "no",
+        "c3": "no",
+        "c4": "no",
+        "c5": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 1.0,
+      "s_judge": 0.0,
+      "s": 0.6,
+      "pass": false,
+      "why": "All four values right but the reasoning is invented (compartments, diffusion limits) and uses no premise, so s_judge = 0 and the pass conjunction fails on s_judge >= 0.5."
+    },
+    "correct_core_no_rationale.json": {
+      "class": "must_not_pass",
+      "criteria": {
+        "c1": "no",
+        "c2": "no",
+        "c3": "no",
+        "c4": "no",
+        "c5": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 1.0,
+      "s_judge": 0.0,
+      "s": 0.6,
+      "pass": false,
+      "why": "Correct core, no reasoning at all: no criterion can be satisfied with a verbatim evidence quote, so s_judge = 0."
+    },
+    "hedge_everything.json": {
+      "class": "must_not_pass",
+      "criteria": {
+        "c1": "no",
+        "c2": "no",
+        "c3": "no",
+        "c4": "no",
+        "c5": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 1.0,
+      "s_judge": 0.0,
+      "s": 0.6,
+      "pass": false,
+      "why": "Core is right, every inference is hedged; under the judge protocol a hedge does not satisfy a criterion, so s_judge = 0."
+    }
+  }
+}

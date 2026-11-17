@@ -1,0 +1,109 @@
+{
+  "task_id": "2026.04.25.720790-f4-bwd-01",
+  "family": "F4",
+  "direction": "backward",
+  "tau": 0.7,
+  "w_core": 0.6,
+  "rationale_word_cap": 250,
+  "core": {
+    "type": "choice",
+    "options": [
+      "prmt7_cko",
+      "ms54_protac",
+      "sgc3027"
+    ]
+  },
+  "criteria": [
+    {
+      "id": "d1",
+      "section": "modality",
+      "text": "Recognizes that the three perturbations differ in modality: the genetic deletion and the PROTAC both remove PRMT7 protein (the PROTAC by VHL-directed proteasomal degradation, with Prmt7 mRNA unchanged), while the catalytic inhibitor leaves PRMT7 protein in place and blocks only its methyltransferase activity.",
+      "points": 0,
+      "core": false,
+      "capability": "design",
+      "step": 1,
+      "grounding": {
+        "source": "paper",
+        "quote": "These results strongly suggest that MS54 induced PRMT7 degradation via the ubiquitin-proteasome system (UPS)."
+      }
+    },
+    {
+      "id": "d2",
+      "section": "modality",
+      "text": "Uses that modality difference to group the PROTAC degrader with the genetic deletion rather than with the catalytic inhibitor - despite the degrader being built from the same PRMT7-binding chemotype as the inhibitor - citing that in T cells the degrader lowers PRMT7 protein and raises nuclear p65 as the deletion does.",
+      "points": 4,
+      "core": false,
+      "capability": "comparison",
+      "step": 1,
+      "grounding": {
+        "source": "paper",
+        "quote": "Similarly, treatment with MS54 resulted in Prmt7 degradation and increased p65 nuclear localization in T cells relative to DMSO-treated controls (Figure 5J)."
+      }
+    },
+    {
+      "id": "d3",
+      "section": "non-catalytic restraint",
+      "text": "Recognizes that an enzymatically inactive PRMT7 mutant binds p65 and represses p65-driven NF-kB reporter activity as strongly as wild-type PRMT7.",
+      "points": 0,
+      "core": false,
+      "capability": "mechanism",
+      "step": 2,
+      "grounding": {
+        "source": "paper",
+        "quote": "Increasing amounts of expression vectors encoding GFP-PRMT7WT or GFP-PRMT7DEAD into sgCTL and sgPRMT7 B16.F10 melanoma cells repressed the p65-mediated luciferase activity, in a dose-dependent manner, suggesting that Prmt7 represses NF-κB activity in a methyltransferase-independent manner (Figure 3I)."
+      }
+    },
+    {
+      "id": "d4",
+      "section": "non-catalytic restraint",
+      "text": "Uses the equal repression by the inactive mutant to conclude that blocking PRMT7's methyltransferase activity does not relieve its restraint on p65, so the catalytic inhibitor cannot reproduce the CD8+ expansion that follows removal of the protein.",
+      "points": 4,
+      "core": false,
+      "capability": "mechanism",
+      "step": 2,
+      "grounding": {
+        "source": "paper",
+        "quote": "Both GFP-PRMT7WT and GFP-PRMT7 DEAD co-immunoprecipitated equally with FLAG-p65 when adjusted to input (Figure 3F)."
+      }
+    },
+    {
+      "id": "d5",
+      "section": "direction of the NF-kB effect",
+      "text": "Recognizes that PRMT7-deficient T cells show higher nuclear p65, higher NF-kB target-gene expression including the survival genes Bcl-2 and Bcl-xL, and down-regulated apoptosis programmes.",
+      "points": 0,
+      "core": false,
+      "capability": "direction",
+      "step": 3,
+      "grounding": {
+        "source": "paper",
+        "quote": "Moreover, we validated the increased expression of several NF-κB target genes including iNos, ICAM, Bcl-2, Bcl-xL, and CD25 in CD8+ T cells using RT-qPCR (Figure 3D)."
+      }
+    },
+    {
+      "id": "d6",
+      "section": "direction of the NF-kB effect",
+      "text": "Uses that NF-kB profile, with the BAY 11-7082 dependence of the CD8+ difference, to conclude that removing PRMT7 protein raises rather than lowers the CD8+ fraction, so neither protein-removal arm can be the arm in which CD8+ cells fell to about 11%.",
+      "points": 3,
+      "core": false,
+      "capability": "direction",
+      "step": 3,
+      "grounding": {
+        "source": "paper",
+        "quote": "Flow cytometry analysis revealed that the increased CD8+ T cell population in Prmt7 cKO mice was abolished with BAY 11-7082 (Figures 4A, 4B)."
+      }
+    },
+    {
+      "id": "d7",
+      "section": "target engagement",
+      "text": "Rules out the alternative that the catalytic inhibitor simply failed to reach PRMT7, citing that pre-treatment with it abolishes PROTAC-mediated PRMT7 degradation and so demonstrates target engagement inside cells.",
+      "points": 2,
+      "core": false,
+      "capability": "control-logic",
+      "step": 2,
+      "grounding": {
+        "source": "paper",
+        "quote": "Pre-treatment with either SGC3027 (a prodrug of SGC8158) or VHL101 completely abolished MS54-induced Prmt7 degradation (Figure 5E)."
+      }
+    }
+  ]
+}

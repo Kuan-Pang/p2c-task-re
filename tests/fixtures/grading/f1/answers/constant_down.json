@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "markers": {
+      "TCF1": "down",
+      "Granzyme B": "down",
+      "Ki67": "down",
+      "KLRG1": "down",
+      "CD44": "down",
+      "IFN-gamma": "down"
+    }
+  },
+  "rationale": "A knockout that loses a methyltransferase will lose protein expression broadly, so every marker on the panel goes down."
+}

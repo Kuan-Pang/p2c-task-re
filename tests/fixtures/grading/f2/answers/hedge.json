@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "arms": {
+      "LPS + anti-TLR4": "lost",
+      "LPS + anti-CD14": "unchanged",
+      "LPS + polymyxin B": "lost",
+      "LPS + IFN-gamma priming": "increased"
+    }
+  },
+  "rationale": "Blocking TLR4 may abolish the response, or may leave a residual signal through another pathway. CD14 blockade could be neutral at this dose or could still reduce it. Polymyxin B might sequester all of the LPS or only some. Priming may raise the response or may exhaust the cells. Any of these outcomes is defensible."
+}

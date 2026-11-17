@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "arms": {
+      "pERK_after_Akti": "decreased",
+      "pAkt_after_UO126": "increased",
+      "pAkt_after_Akti": "decreased",
+      "pERK_after_UO126": "decreased"
+    }
+  },
+  "rationale": "The PI3K/Akt and Ras/MAPK/ERK pathways cross-regulate extensively in breast epithelium. Akt supports ERK activation through Raf and through mTORC1-dependent translation, so inhibiting Akt lowers pERK1/2. Conversely, MEK inhibition relieves ERK-dependent negative feedback on receptor tyrosine kinases and IRS/GAB adaptors, and the textbook consequence is a rebound rise in pAkt T308. Each inhibitor of course lowers its own readout: pAkt T308 falls under the Akt inhibitor and pERK1/2 falls under UO126, which is the expected on-target effect of acting at each node."
+}

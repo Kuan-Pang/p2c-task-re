@@ -1,0 +1,6 @@
+{
+  "answer": {
+    "experiment": "Measure IL-23R expression on both populations by flow cytometry and compare the mean fluorescence intensity between them."
+  },
+  "rationale": "Whichever population carries more receptor is the one the cytokine acts on, so a careful expression comparison settles the question."
+}

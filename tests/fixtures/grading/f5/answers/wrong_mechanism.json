@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "mechanism_primary": "The antibody strips CD22 off the microglial surface, and losing the receptor is what lets the cells engulf more debris.",
+    "key_entities": [
+      "CD22",
+      "ITIM motif",
+      "SHP-1"
+    ]
+  },
+  "rationale": "CD22 and its ITIM motif are the module in question and SHP-1 is the phosphatase such motifs recruit. Here, though, the simplest reading is that the blocking antibody internalises the receptor, so there is less CD22 on the surface and less inhibition. The reconstitution is a HEK293 experiment, so I would hold the phosphatase step loosely."
+}

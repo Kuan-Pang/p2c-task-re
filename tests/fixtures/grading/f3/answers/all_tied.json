@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "ranking": [
+      [
+        "IL-6",
+        "IL-1beta",
+        "TGF-beta",
+        "TNF-alpha"
+      ]
+    ]
+  },
+  "rationale": "All four cytokines act on the same quiescent fibroblasts and the premises do not give numbers for each, so I rank them equal."
+}

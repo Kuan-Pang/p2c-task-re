@@ -1,0 +1,19 @@
+{
+  "answer": {
+    "ranking": [
+      [
+        "IL-1beta"
+      ],
+      [
+        "TNF-alpha"
+      ],
+      [
+        "IL-6"
+      ],
+      [
+        "TGF-beta"
+      ]
+    ]
+  },
+  "rationale": "IL-1beta is the most potent inflammatory cytokine of the set, so it leads, with TNF-alpha just behind it, then IL-6, then TGF-beta, which arrests the cycle."
+}

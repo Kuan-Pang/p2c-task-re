@@ -1,0 +1,91 @@
+{
+  "task_id": "fixture-f5-01",
+  "family": "F5",
+  "direction": null,
+  "tau": 0.7,
+  "w_core": 0.4,
+  "rationale_word_cap": 400,
+  "core": {
+    "type": "judged"
+  },
+  "criteria": [
+    {
+      "id": "k1",
+      "section": "entities",
+      "text": "Names CD22 and its ITIM motif as the inhibitory module.",
+      "points": 3,
+      "core": true,
+      "capability": "mechanism",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "CD22 carries an ITIM motif in its cytoplasmic tail"
+      }
+    },
+    {
+      "id": "k2",
+      "section": "entities",
+      "text": "Names SHP-1 as the phosphatase the motif recruits.",
+      "points": 3,
+      "core": true,
+      "capability": "mechanism",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "phosphorylated ITIM motifs recruit the phosphatase SHP-1"
+      }
+    },
+    {
+      "id": "j0",
+      "section": "cue",
+      "text": "Notes that surface CD22 levels are unchanged by the antibody.",
+      "points": 0,
+      "core": false,
+      "capability": "mechanism",
+      "step": 2,
+      "grounding": {
+        "source": "instruction",
+        "quote": "surface CD22 levels on microglia are unchanged by the antibody"
+      }
+    },
+    {
+      "id": "j1",
+      "section": "step 2",
+      "text": "Attributes the rise in debris clearance to the loss of ITIM-dependent inhibitory signalling rather than to a change in how much CD22 is on the surface.",
+      "points": 3,
+      "core": false,
+      "capability": "mechanism",
+      "step": 2,
+      "grounding": {
+        "source": "instruction",
+        "quote": "surface CD22 levels on microglia are unchanged by the antibody"
+      }
+    },
+    {
+      "id": "j2",
+      "section": "step 3",
+      "text": "Uses the tyrosine-to-phenylalanine mutant to argue that phosphorylation of the motif, not CD22 ligand binding as such, is the step that matters.",
+      "points": 3,
+      "core": false,
+      "capability": "mechanism",
+      "step": 3,
+      "grounding": {
+        "source": "instruction",
+        "quote": "microglia carrying a CD22 point mutant in which the ITIM tyrosine is replaced by phenylalanine"
+      }
+    },
+    {
+      "id": "j3",
+      "section": "caveat",
+      "text": "Notes that the SHP-1 interaction was shown in a reconstitution rather than in microglia, so that step is inferred.",
+      "points": 2,
+      "core": false,
+      "capability": "uncertainty",
+      "step": 4,
+      "grounding": {
+        "source": "instruction",
+        "quote": "in a HEK293 reconstitution CD22 co-precipitates with SHP-1"
+      }
+    }
+  ]
+}

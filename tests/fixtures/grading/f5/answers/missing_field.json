@@ -1,0 +1,6 @@
+{
+  "answer": {
+    "mechanism_primary": "An inhibitory receptor on microglia holds engulfment down."
+  },
+  "rationale": "The blocking antibody raises clearance and the point mutant does the same, so an inhibitory signal is being removed. The reconstitution adds a binding partner, shown outside microglia."
+}

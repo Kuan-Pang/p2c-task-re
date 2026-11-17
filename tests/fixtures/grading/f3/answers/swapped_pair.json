@@ -1,0 +1,17 @@
+{
+  "answer": {
+    "ranking": [
+      [
+        "IL-1beta",
+        "TNF-alpha"
+      ],
+      [
+        "TGF-beta"
+      ],
+      [
+        "IL-6"
+      ]
+    ]
+  },
+  "rationale": "The two NF-kB cytokines are equal and go on top. TGF-beta remodels the cells towards a myofibroblast state, which I read as a growth response, so it goes above IL-6, whose STAT3 signal is the weakest of the four."
+}

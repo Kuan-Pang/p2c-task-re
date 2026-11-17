@@ -1,0 +1,122 @@
+{
+  "paper_metadata": {
+    "doi": "10.64898/2026.05.31.727600",
+    "title": "Anti-Melanoma Differentiation-Associated protein 5 Auto-Antibodies Promote a Profibrotic Phenotype in a Human Lung Fibroblast Cell Line",
+    "authors": [
+      "Silvia Calandra",
+      "Maristella Maggi",
+      "Andrea Previtali",
+      "Luisa Iamele",
+      "Paola Cipriani",
+      "Luca Navarini",
+      "Roberto Giacomelli",
+      "Piero Ruscitti",
+      "Veronica Codullo",
+      "Giovanni Zanframundo",
+      "Claudia Scotti",
+      "Lorenzo Cavagna"
+    ],
+    "journal": "bioRxiv",
+    "url": "https://doi.org/10.64898/2026.05.31.727600"
+  },
+  "supplement_valuable": false,
+  "supplement_rationale": "The paper declares no supplementary material (HAS_SUPPLEMENTARY_MATERIAL_TAG: False); all cell-state and perturbation data are in the main figures.",
+  "table_1": [
+    {
+      "cell_state": "Lung fibroblast",
+      "species": "Homo sapiens",
+      "context": "IMR-90 human fetal lung fibroblast cell line, in vitro",
+      "description": "Quiescent/unstimulated IMR-90 fetal lung fibroblasts; untreated control (medium only); baseline proliferation, impedance, gene expression and secretion of TLRs, interferons, ET-1, collagen and pro-collagen",
+      "text_location": "Materials and Methods (Cell Culture); Results; Figures 2-9"
+    },
+    {
+      "cell_state": "Pro-fibrotic lung fibroblast",
+      "species": "Homo sapiens",
+      "context": "IMR-90 human fetal lung fibroblast cell line, in vitro",
+      "description": "Activated, proliferative, pro-fibrotic IMR-90 fibroblasts; increased impedance/normalized cell index, reduced doubling time, increased cell number, increased secretion of pro-collagen and type I/II interferons, and altered TLR/IFN/ET-1 mRNA program",
+      "text_location": "Results (RTCA, MTT/cell count, RT-qPCR, ELISA); Figures 2-9"
+    }
+  ],
+  "table_2": [
+    {
+      "starting_cell_state": "Lung fibroblast",
+      "ending_cell_state": "Pro-fibrotic lung fibroblast",
+      "species": "Homo sapiens",
+      "description_of_perturbation": "Treatment with MDA5-anti-MDA5 immune complex: recombinant human MDA5 protein (1 μg/ml) plus patient-derived polyclonal anti-MDA5 IgG1 antibodies (1 μg/ml)",
+      "context": "IMR-90 human fetal lung fibroblast cell line, in vitro",
+      "perturbation_modality": "signaling",
+      "cell_assay": "real-time cell analysis + MTT assay + cell counting + qPCR + ELISA",
+      "evidence_source": "primary",
+      "delta": "Highest normalized cell index throughout later phase, ~25% increase over control at 121 h; doubling time reduced ~8 h (54.4 h control vs 46.8 h); cell number approximately doubled at 5 d; no acute cytotoxicity by MTT; downregulation of TLR2, TLR7, IFN-β and ET-1 mRNA; pro-collagen and interferon secretion detectable but reduced relative to antibody-alone; additive/synergistic pro-fibrotic activation",
+      "mechanism": "Antibody-antigen immune complexes drive fibroblast activation via Fc-mediated activation of the classical complement pathway; complement-inactivated serum abolished the response, and the effect is not neutralized but summed relative to single agents",
+      "mechanism_source": "explicitly_described",
+      "experiment_confidence": "validated",
+      "sample_size": "n=3-4 replicate wells per condition, 2 independent experiments"
+    },
+    {
+      "starting_cell_state": "Lung fibroblast",
+      "ending_cell_state": "Pro-fibrotic lung fibroblast",
+      "species": "Homo sapiens",
+      "description_of_perturbation": "Treatment with patient-derived polyclonal anti-MDA5 IgG1 antibodies alone (1 μg/ml)",
+      "context": "IMR-90 human fetal lung fibroblast cell line, in vitro",
+      "perturbation_modality": "signaling",
+      "cell_assay": "real-time cell analysis + MTT assay + qPCR + ELISA",
+      "evidence_source": "primary",
+      "delta": "Moderate increase in normalized cell index from ~60-70 h; most active condition for inducing significantly increased secretion of IFN-α, IFN-β, IFN-γ and pro-collagen α1; downregulation of TLR2, TLR7, IFN-α, IFN-β and ET-1 mRNA; slight non-significant downward trend in MTT viability; no acute cytotoxicity",
+      "mechanism": "Autoantibody-driven activation dependent on Fc-mediated classical complement activation; complement-inactivated serum completely abolished the RTCA response to anti-MDA5 antibodies",
+      "mechanism_source": "explicitly_described",
+      "experiment_confidence": "validated",
+      "sample_size": "n=3-4 replicate wells per condition, 2 independent experiments"
+    },
+    {
+      "starting_cell_state": "Lung fibroblast",
+      "ending_cell_state": "Pro-fibrotic lung fibroblast",
+      "species": "Homo sapiens",
+      "description_of_perturbation": "Treatment with recombinant human MDA5 protein alone (1 μg/ml)",
+      "context": "IMR-90 human fetal lung fibroblast cell line, in vitro",
+      "perturbation_modality": "signaling",
+      "cell_assay": "real-time cell analysis + MTT assay + qPCR",
+      "evidence_source": "primary",
+      "delta": "Moderate increase in normalized cell index from ~60-70 h (limited vs immune complex); significant reduction of TLR2, TLR7, TLR8, IFN-α, IFN-β and ET-1 mRNA; no acute cytotoxicity and no significant MTT viability change",
+      "mechanism": "Extracellular MDA5 antigen proposed to act as a primary trigger for pro-pathogenic reprogramming of lung fibroblasts",
+      "mechanism_source": "inferred_from_data",
+      "experiment_confidence": "validated",
+      "sample_size": "n=3-4 replicate wells per condition, 2 independent experiments"
+    },
+    {
+      "starting_cell_state": "Lung fibroblast",
+      "ending_cell_state": "Lung fibroblast",
+      "species": "Homo sapiens",
+      "description_of_perturbation": "Treatment with patient-derived anti-MDA5 antibodies (with or without MDA5) in the presence of complement-inactivated serum",
+      "context": "IMR-90 human fetal lung fibroblast cell line, in vitro",
+      "perturbation_modality": "signaling",
+      "cell_assay": "real-time cell analysis",
+      "evidence_source": "primary",
+      "delta": "Complement removal completely abolished the fibroblast RTCA activation response to anti-MDA5 antibodies, both with and without MDA5; no impedance increase and no distinct activated pro-fibrotic phenotype induced",
+      "mechanism": "Fc-mediated activation of the classical complement pathway is an essential mediator of anti-MDA5 immune-complex-driven fibroblast activation",
+      "mechanism_source": "explicitly_described",
+      "experiment_confidence": "single_experiment",
+      "sample_size": "n=at least 2 independent wells per condition"
+    }
+  ],
+  "table_3": [
+    {
+      "acronym": "RTCA",
+      "definition": "Real Time Cell Analysis (label-free microelectronic impedance sensing)",
+      "category": "protocol",
+      "note": "Dynamic impedance monitoring of fibroblast proliferation/adhesion on iCELLigence system"
+    },
+    {
+      "acronym": "NCI",
+      "definition": "Normalized Cell Index",
+      "category": "other",
+      "note": "Impedance-derived readout normalized to treatment start time"
+    },
+    {
+      "acronym": "CI",
+      "definition": "Cell Index",
+      "category": "other",
+      "note": "Dimensionless impedance parameter proportional to electrode coverage"
+    }
+  ]
+}

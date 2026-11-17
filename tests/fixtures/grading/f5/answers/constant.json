@@ -1,0 +1,10 @@
+{
+  "answer": {
+    "mechanism_primary": "The mechanism is a signalling pathway in which a receptor regulates a cellular response.",
+    "key_entities": [
+      "receptor",
+      "signalling pathway"
+    ]
+  },
+  "rationale": "Receptors regulate responses through signalling pathways, and this case follows that pattern."
+}

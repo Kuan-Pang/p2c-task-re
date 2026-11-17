@@ -1,0 +1,17 @@
+{
+  "answer": {
+    "ranking": [
+      [
+        "IL-1beta",
+        "TNF-alpha"
+      ],
+      [
+        "IL-6"
+      ],
+      [
+        "TGF-beta"
+      ]
+    ]
+  },
+  "rationale": "Two of the four stimuli work through NF-kB and the premises make them equally strong, so they share the top of the ranking rather than being ordered against each other. IL-6 raises EdU by roughly half as much, which puts it below both of them but still above a stimulus that stops the cycle. TGF-beta arrests the cycle outright, so it sits last."
+}

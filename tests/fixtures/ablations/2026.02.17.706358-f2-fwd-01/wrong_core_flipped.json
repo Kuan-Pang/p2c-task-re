@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "arms": {
+      "pERK_after_Akti": "decreased",
+      "pAkt_after_UO126": "decreased",
+      "pAkt_after_Akti": "unchanged",
+      "pERK_after_UO126": "unchanged"
+    }
+  },
+  "rationale": "Akt and ERK are mutually reinforcing in epithelial cells, so removing either one drains the other: pERK falls when Akt is inhibited and pAkt falls when MEK is inhibited. The compounds were added as single short pulses into a Matrigel culture, so by the day of harvest each had washed out of its own node, leaving pAkt T308 under the Akt inhibitor and pERK1/2 under UO126 back at their untreated levels."
+}

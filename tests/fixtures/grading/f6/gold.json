@@ -1,0 +1,13 @@
+{
+  "task_id": "fixture-f6-fwd-01",
+  "answer": {
+    "arms": {
+      "CM from untreated macrophages": "unchanged",
+      "CM from IL-4-treated macrophages": "increased",
+      "CM from IL-4 + STAT6 inhibitor macrophages": "unchanged",
+      "CM from IL-4-treated Tgfb1-KO macrophages": "unchanged"
+    },
+    "state": "an IL-4-polarised, TGF-beta1-secreting macrophage"
+  },
+  "rationale": "Only one factor in the transferred medium moves collagen, so the question becomes which cultures put that factor into their medium. IL-4 polarises the macrophages through STAT6 and polarised cells secrete it, so that medium raises collagen. Untreated cells secrete none. Inhibiting STAT6 stops the polarisation, so nothing is secreted and the fibroblasts do not move. Knocking out the gene removes the factor even though IL-4 was given, which separates the factor from the polarisation itself."
+}

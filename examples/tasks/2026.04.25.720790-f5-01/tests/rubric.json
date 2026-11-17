@@ -1,0 +1,117 @@
+{
+  "task_id": "2026.04.25.720790-f5-01",
+  "family": "F5",
+  "direction": null,
+  "tau": 0.7,
+  "w_core": 0.4,
+  "rationale_word_cap": 400,
+  "core": {
+    "type": "judged"
+  },
+  "criteria": [
+    {
+      "id": "k1",
+      "section": "core mechanism",
+      "text": "States that PRMT7's restraint of NF-kB does not require its methyltransferase (arginine methylation) activity.",
+      "points": 5,
+      "core": true,
+      "capability": "mechanism",
+      "step": 2,
+      "grounding": {
+        "source": "paper",
+        "quote": "Increasing amounts of expression vectors encoding GFP-PRMT7WT or GFP-PRMT7DEAD into sgCTL and sgPRMT7 B16.F10 melanoma cells repressed the p65-mediated luciferase activity, in a dose-dependent manner, suggesting that Prmt7 represses NF-κB activity in a methyltransferase-independent manner (Figure 3I)."
+      }
+    },
+    {
+      "id": "k2",
+      "section": "core mechanism",
+      "text": "Attributes the restraint to the PRMT7 protein acting stoichiometrically on p65/RelA - binding it and keeping it out of the nucleus - so that the amount of PRMT7 protein, not the amount of its catalytic output, sets how much p65 reaches the nucleus.",
+      "points": 5,
+      "core": true,
+      "capability": "mechanism",
+      "step": 3,
+      "grounding": {
+        "source": "paper",
+        "quote": "Both GFP-PRMT7WT and GFP-PRMT7 DEAD co-immunoprecipitated equally with FLAG-p65 when adjusted to input (Figure 3F)."
+      }
+    },
+    {
+      "id": "k3",
+      "section": "core mechanism",
+      "text": "Draws the consequence for the three arms: removing PRMT7 protein by gene deletion or by PROTAC degradation releases p65 and permits the NF-kB-driven CD8+ expansion, whereas occupying the catalytic site leaves the restraint intact and produces no expansion.",
+      "points": 5,
+      "core": true,
+      "capability": "mechanism",
+      "step": 4,
+      "grounding": {
+        "source": "paper",
+        "quote": "The PRMT7 inhibitor, SGC3027, did not mimic our findings with the Prmt7 cKO phenotype (Figures 2G, 2H), suggesting that suppression of Prmt7 expression, rather than blockade of its methyltransferase activity, was necessary to drive the anti-tumor CD8+ T cell response observed."
+      }
+    },
+    {
+      "id": "e1",
+      "section": "target engagement",
+      "text": "Recognizes that the catalytic inhibitor engages PRMT7 inside cells, since pre-treatment with it abolishes the PROTAC's degradation of PRMT7.",
+      "points": 0,
+      "core": false,
+      "capability": "control-logic",
+      "step": 1,
+      "grounding": {
+        "source": "paper",
+        "quote": "Pre-treatment with either SGC3027 (a prodrug of SGC8158) or VHL101 completely abolished MS54-induced Prmt7 degradation (Figure 5E)."
+      }
+    },
+    {
+      "id": "e2",
+      "section": "target engagement",
+      "text": "Uses that engagement evidence to reject the alternative that catalytic inhibition failed for technical reasons - no uptake, no engagement, prodrug not converted - and to conclude instead that the function lost on protein removal is not the catalytic one.",
+      "points": 4,
+      "core": false,
+      "capability": "control-logic",
+      "step": 1,
+      "grounding": {
+        "source": "k_premise",
+        "text": "An active-site ligand that prevents a PROTAC built on the same warhead from degrading its target has been shown to occupy that target inside cells."
+      }
+    },
+    {
+      "id": "e3",
+      "section": "abundance versus activity",
+      "text": "Recognizes that the PROTAC lowers PRMT7 protein through the ubiquitin-proteasome system while leaving Prmt7 mRNA unchanged, and that in T cells it reproduces the deletion's rise in nuclear p65.",
+      "points": 0,
+      "core": false,
+      "capability": "design",
+      "step": 2,
+      "grounding": {
+        "source": "paper",
+        "quote": "These results strongly suggest that MS54 induced PRMT7 degradation via the ubiquitin-proteasome system (UPS)."
+      }
+    },
+    {
+      "id": "e4",
+      "section": "abundance versus activity",
+      "text": "Argues from the way MS54 acts - it degrades the PRMT7 protein itself, post-translationally, leaving Prmt7 mRNA unchanged - to the conclusion that the degrader arm therefore behaves like the genetic deletion, raising nuclear p65 and expanding the CD8+ compartment, so what the two expanding arms have in common is the loss of PRMT7 protein.",
+      "points": 4,
+      "core": false,
+      "capability": "mechanism",
+      "step": 2,
+      "grounding": {
+        "source": "paper",
+        "quote": "Similarly, treatment with MS54 resulted in Prmt7 degradation and increased p65 nuclear localization in T cells relative to DMSO-treated controls (Figure 5J)."
+      }
+    },
+    {
+      "id": "e5",
+      "section": "direction of the NF-kB effect",
+      "text": "Explains why de-repressing NF-kB expands rather than depletes the CD8+ compartment here, using the NF-kB target profile of PRMT7-deficient CD8+ T cells (survival genes up, apoptosis programmes down) together with the loss of the CD8+ difference under BAY 11-7082.",
+      "points": 3,
+      "core": false,
+      "capability": "direction",
+      "step": 4,
+      "grounding": {
+        "source": "paper",
+        "quote": "Moreover, we validated the increased expression of several NF-κB target genes including iNos, ICAM, Bcl-2, Bcl-xL, and CD25 in CD8+ T cells using RT-qPCR (Figure 3D)."
+      }
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "task_id": "2026.04.25.720790-f4-bwd-01",
+  "family": "F4",
+  "tau": 0.7,
+  "w_core": 0.6,
+  "judge_points_total": 13,
+  "note": "Verdicts are what a careful judge should return per criterion id under the judge protocol in docs/task_format.md section 6 (one criterion at a time, evidence quote must occur verbatim and outside masked spans, a hedge does not satisfy a criterion). Scores are recomputed from those verdicts by the formulas in section 6.",
+  "gold": {
+    "file": "../../../../examples/tasks/2026.04.25.720790-f4-bwd-01/tests/gold.json",
+    "class": "must_pass",
+    "criteria": {
+      "d1": "yes",
+      "d2": "yes",
+      "d3": "yes",
+      "d4": "yes",
+      "d5": "yes",
+      "d6": "yes",
+      "d7": "yes"
+    },
+    "consistency": "no_contradiction",
+    "s_core": 1.0,
+    "s_judge": 1.0,
+    "s": 1.0,
+    "pass": true
+  },
+  "ablations": {
+    "gold_paraphrase.json": {
+      "class": "must_pass",
+      "criteria": {
+        "d1": "yes",
+        "d2": "yes",
+        "d3": "yes",
+        "d4": "yes",
+        "d5": "yes",
+        "d6": "yes",
+        "d7": "yes"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 1.0,
+      "s_judge": 1.0,
+      "s": 1.0,
+      "pass": true,
+      "why": "Correct choice and the whole derivation restated in different words, so every criterion is satisfied with an unmasked quote."
+    },
+    "wrong_core_dp_fork.json": {
+      "class": "must_fail",
+      "criteria": {
+        "d1": "no",
+        "d2": "no",
+        "d3": "no",
+        "d4": "no",
+        "d5": "no",
+        "d6": "no",
+        "d7": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 0.0,
+      "s_judge": 0.0,
+      "s": 0.0,
+      "pass": false,
+      "why": "The plausible-wrong fork at the catalysis decision point (inhibition treated as equivalent to protein loss), which forces the degrader as the answer. s_core = 0."
+    },
+    "textbook_prior.json": {
+      "class": "must_fail",
+      "criteria": {
+        "d1": "no",
+        "d2": "no",
+        "d3": "no",
+        "d4": "no",
+        "d5": "no",
+        "d6": "no",
+        "d7": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 0.0,
+      "s_judge": 0.0,
+      "s": 0.0,
+      "pass": false,
+      "why": "What a model answers from priors with no premises: knockouts are the most drastic. s_core = 0."
+    },
+    "constant_answer.json": {
+      "class": "must_fail",
+      "criteria": {
+        "d1": "no",
+        "d2": "no",
+        "d3": "no",
+        "d4": "no",
+        "d5": "no",
+        "d6": "no",
+        "d7": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 0.0,
+      "s_judge": 0.0,
+      "s": 0.0,
+      "pass": false,
+      "why": "Constant policy: always answer the first option, with the stem's own mediator noun as the rationale. On a single task this scores 0 or 1 by luck; the suite-level expectation for a 3-option choice is 1/3."
+    },
+    "correct_core_wrong_mechanism.json": {
+      "class": "must_not_pass",
+      "criteria": {
+        "d1": "no",
+        "d2": "no",
+        "d3": "no",
+        "d4": "no",
+        "d5": "no",
+        "d6": "no",
+        "d7": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 1.0,
+      "s_judge": 0.0,
+      "s": 0.6,
+      "pass": false,
+      "why": "Right arm for an invented reason (off-target prodrug toxicity): no criterion is met, s_judge = 0, so the pass conjunction fails on s_judge >= 0.5."
+    },
+    "correct_core_no_rationale.json": {
+      "class": "must_not_pass",
+      "criteria": {
+        "d1": "no",
+        "d2": "no",
+        "d3": "no",
+        "d4": "no",
+        "d5": "no",
+        "d6": "no",
+        "d7": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 1.0,
+      "s_judge": 0.0,
+      "s": 0.6,
+      "pass": false,
+      "why": "Correct choice with no reasoning: nothing to quote, s_judge = 0."
+    },
+    "hedge_everything.json": {
+      "class": "must_not_pass",
+      "criteria": {
+        "d1": "no",
+        "d2": "no",
+        "d3": "no",
+        "d4": "no",
+        "d5": "no",
+        "d6": "no",
+        "d7": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 1.0,
+      "s_judge": 0.0,
+      "s": 0.6,
+      "pass": false,
+      "why": "Correct choice, every step hedged and no premise used; hedges do not satisfy criteria, so s_judge = 0."
+    }
+  }
+}

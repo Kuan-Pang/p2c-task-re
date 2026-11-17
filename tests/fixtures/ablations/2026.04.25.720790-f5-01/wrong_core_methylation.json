@@ -1,0 +1,12 @@
+{
+  "answer": {
+    "mechanism_primary": "PRMT7 monomethylates p65/RelA on arginine residues in its dimerisation domain, and that methylation mark keeps p65 out of the nucleus, so losing PRMT7 activity releases p65 and activates NF-kB.",
+    "key_entities": [
+      "PRMT7 methyltransferase activity",
+      "monomethylarginine on p65/RelA",
+      "nuclear translocation of p65",
+      "NF-kB target genes"
+    ]
+  },
+  "rationale": "PRMT7 is the only type III PRMT and writes monomethylarginine. The obvious substrate here is p65, which it binds, and the mark presumably masks the nuclear localisation signal. Removing the enzyme by deletion or by degradation removes the mark, p65 translocates, NF-kB targets rise and CD8+ cells expand. The catalytic inhibitor is the same manipulation by another route; the failure of that arm most likely reflects incomplete conversion of the prodrug in primary T cells, so it should not be weighed against the methylation model."
+}

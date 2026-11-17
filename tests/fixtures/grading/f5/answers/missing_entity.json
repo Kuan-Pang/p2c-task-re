@@ -1,0 +1,10 @@
+{
+  "answer": {
+    "mechanism_primary": "CD22's phosphorylated ITIM motif holds engulfment down, and blocking the receptor releases it.",
+    "key_entities": [
+      "CD22",
+      "ITIM motif"
+    ]
+  },
+  "rationale": "Blocking the receptor raises engulfment without changing how much receptor is on the surface, and the tyrosine-to-phenylalanine mutant copies the antibody, so the step is phosphorylation of the motif rather than ligand binding. I cannot say from these data which phosphatase the motif recruits in microglia."
+}

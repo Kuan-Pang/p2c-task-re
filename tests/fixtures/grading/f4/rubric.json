@@ -1,0 +1,71 @@
+{
+  "task_id": "fixture-f4-bwd-01",
+  "family": "F4",
+  "direction": "backward",
+  "tau": 0.7,
+  "w_core": 0.6,
+  "rationale_word_cap": 250,
+  "core": {
+    "type": "choice",
+    "options": [
+      "Stat3 deletion",
+      "Il10 deletion",
+      "Il10ra deletion",
+      "Myd88 deletion"
+    ]
+  },
+  "criteria": [
+    {
+      "id": "c0",
+      "section": "cue",
+      "text": "Notes that TNF secretion after lipopolysaccharide is normal.",
+      "points": 0,
+      "core": false,
+      "capability": "control-logic",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "produces the normal amount of secreted TNF"
+      }
+    },
+    {
+      "id": "c1",
+      "section": "step 1",
+      "text": "Uses the intact lipopolysaccharide-driven TNF to rule out Myd88 deletion.",
+      "points": 3,
+      "core": false,
+      "capability": "control-logic",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "MyD88 is required for every lipopolysaccharide-driven cytokine in these cells"
+      }
+    },
+    {
+      "id": "c2",
+      "section": "step 2",
+      "text": "Uses the normal STAT3 phosphorylation after recombinant IL-10 to rule out Il10ra deletion and Stat3 deletion.",
+      "points": 3,
+      "core": false,
+      "capability": "control-logic",
+      "step": 2,
+      "grounding": {
+        "source": "instruction",
+        "quote": "adding recombinant IL-10 protein to the cells produces the normal amount of STAT3 phosphorylation"
+      }
+    },
+    {
+      "id": "c3",
+      "section": "step 3",
+      "text": "Concludes that the cells cannot make IL-10 but can still respond to it.",
+      "points": 2,
+      "core": false,
+      "capability": "direction",
+      "step": 3,
+      "grounding": {
+        "source": "instruction",
+        "quote": "no detectable secreted IL-10"
+      }
+    }
+  ]
+}

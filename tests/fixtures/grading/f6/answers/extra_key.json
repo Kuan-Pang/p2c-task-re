@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "arms": {
+      "CM from untreated macrophages": "unchanged",
+      "CM from IL-4-treated macrophages": "increased",
+      "CM from IL-4 + STAT6 inhibitor macrophages": "unchanged",
+      "CM from IL-4-treated Tgfb1-KO macrophages": "unchanged"
+    },
+    "state": "an IL-4-polarised, TGF-beta1-secreting macrophage",
+    "confidence": "high"
+  },
+  "rationale": "Only TGF-beta1 moves collagen here, and only the IL-4-polarised macrophages secrete it, so that one medium raises collagen and the rest leave it alone."
+}

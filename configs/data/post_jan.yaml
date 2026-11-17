@@ -1,0 +1,7 @@
+# Read-only inputs (PLAN §8). Exact dated folders, never "latest".
+extraction_dirs:
+  immunology: /lfs/ampere2/0/kuanpang/papers2cell/papers2cells/outputs/2026_post_jan/immunology_top300/2026-07-13_18-30-15
+  cancer: /lfs/ampere2/0/kuanpang/papers2cell/papers2cells/outputs/2026_post_jan/cancer_top300/2026-07-13_20-07-18
+corpus_priority: [immunology, cancer]   # DOI dedupe: newest archive version, then most table_2 rows, then this order
+meca_root: /lfs/ampere2/0/kuanpang/biorxiv/Current_Content
+split_manifest: /lfs/ampere2/0/kuanpang/papers2cell/papers2cells/outputs/qa_generation/multiple_choice/benchmark100_v2_opus5_2026-09-22/manifest.json

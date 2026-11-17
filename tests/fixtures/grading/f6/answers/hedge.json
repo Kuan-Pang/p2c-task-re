@@ -1,0 +1,12 @@
+{
+  "answer": {
+    "arms": {
+      "CM from untreated macrophages": "unchanged",
+      "CM from IL-4-treated macrophages": "increased",
+      "CM from IL-4 + STAT6 inhibitor macrophages": "unchanged",
+      "CM from IL-4-treated Tgfb1-KO macrophages": "unchanged"
+    },
+    "state": "an IL-4-polarised, TGF-beta1-secreting macrophage"
+  },
+  "rationale": "IL-4-conditioned medium may raise collagen through TGF-beta1 or may lower it through an anti-inflammatory factor. The STAT6-inhibited arm could go either way depending on carry-over. The knockout arm may still carry other matrix factors. All four arms are uncertain."
+}

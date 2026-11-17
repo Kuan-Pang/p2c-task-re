@@ -1,0 +1,6 @@
+{
+  "answer": {
+    "experiment": "Cross the conditional Il23r allele to Cd4-Cre and, separately, to Rorc-Cre on a Rag1-KO background, and score colitis in each line beside Cre-only littermates and an antibody-treated arm. If disease falls only when IL-23R is removed from T cells, the T-cell explanation holds; if it falls only in the ILC3 deletion, the ILC3 explanation holds; a partial fall in each means both populations carry part of the signal."
+  },
+  "rationale": "The antibody removes the cytokine from every cell at once, so no dose of it can tell the two populations apart. The lymphocyte-deficient result shows that innate cells alone are enough to support the antibody effect, which is a statement about sufficiency and says nothing about whether T cells also carry it when they are present. The way to separate them is to leave the cytokine in place and take the receptor away from one population at a time, then read the same disease score in each case, with the whole-animal blockade kept as the positive control."
+}

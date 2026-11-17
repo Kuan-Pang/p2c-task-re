@@ -1,0 +1,14 @@
+{
+  "answer": {
+    "mechanism_primary": [
+      "ITIM-SHP-1 inhibitory signalling",
+      "receptor internalisation"
+    ],
+    "key_entities": [
+      "CD22",
+      "ITIM motif",
+      "SHP-1"
+    ]
+  },
+  "rationale": "Two mechanisms remain open on this evidence and I decline to rank them: the motif may recruit a phosphatase, or the antibody may remove the receptor."
+}

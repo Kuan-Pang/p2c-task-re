@@ -1,0 +1,6 @@
+{
+  "answer": {
+    "choice": "ms54_protac"
+  },
+  "rationale": "A selective catalytic inhibitor is the chemical equivalent of a knockout: it removes PRMT7 function, so SGC3027 should reproduce the deletion and expand CD8+ cells. The degrader is the outlier. PROTACs act at micromolar concentrations over three days, recruit a ubiquitin ligase to whatever else they encounter, and their linkers are poorly tolerated, so the collapse of the CD8+ compartment to about 11% is the signature of degrader toxicity rather than of PRMT7 biology."
+}

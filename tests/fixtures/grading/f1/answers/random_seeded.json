@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "markers": {
+      "TCF1": "up",
+      "Granzyme B": "down",
+      "Ki67": "unchanged",
+      "KLRG1": "unchanged",
+      "CD44": "unchanged",
+      "IFN-gamma": "up"
+    }
+  },
+  "rationale": "Answer drawn at random from the three allowed directions with seed 2026; no derivation."
+}

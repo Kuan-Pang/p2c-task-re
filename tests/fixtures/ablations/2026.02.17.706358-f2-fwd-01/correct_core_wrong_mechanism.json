@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "arms": {
+      "pERK_after_Akti": "unchanged",
+      "pAkt_after_UO126": "unchanged",
+      "pAkt_after_Akti": "decreased",
+      "pERK_after_UO126": "decreased"
+    }
+  },
+  "rationale": "The cross readouts stay flat for a physical reason: Akt and ERK occupy different compartments of the acinus, ERK being nuclear in these day-12 spheroids while Akt stays at the membrane, so the two enzymes never meet and cannot influence each other's phosphorylation. Phosphatase activity in the acinus is high enough that any small spillover between the branches would be erased before lysis, which is why the cross-pathway blots match the untreated controls."
+}

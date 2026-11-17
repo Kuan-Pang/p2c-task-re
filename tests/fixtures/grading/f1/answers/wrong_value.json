@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "markers": {
+      "TCF1": "up",
+      "Granzyme B": "down",
+      "Ki67": "unchanged",
+      "KLRG1": "unchanged",
+      "CD44": "unchanged",
+      "IFN-gamma": "unchanged"
+    }
+  },
+  "rationale": "Losing Prmt7 opens the Tcf7 locus, so TCF1 rises, and closes the Gzmb locus, so granzyme B falls. The premises report no genotype difference at Klrg1, on CD44 or in per-cell interferon-gamma, so those three are flat, and I see no direct proliferation readout, so I leave Ki67 flat as well."
+}

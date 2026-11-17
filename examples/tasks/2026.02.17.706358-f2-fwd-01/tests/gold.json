@@ -1,0 +1,12 @@
+{
+  "task_id": "2026.02.17.706358-f2-fwd-01",
+  "answer": {
+    "arms": {
+      "pERK_after_Akti": "unchanged",
+      "pAkt_after_UO126": "unchanged",
+      "pAkt_after_Akti": "decreased",
+      "pERK_after_UO126": "decreased"
+    }
+  },
+  "rationale": "Both branches sit below one receptor: Api5 OE pushes FGF2 onto FGFR1 and FRS2alpha, and blocking that receptor pulled pAkt and pERK down together. Each branch inhibitor acts at its own node below that shared input, and neither treatment changed Api5 or FGF2, so the drive reaching the untouched branch is what it was in untreated acini. Whether the branches also feed each other is settled by the phenotypes they control. Blocking Akt reverted size, cell number, sphericity and Ki-67 yet left filled lumens and all three polarity readouts as they were; blocking MEK/ERK reverted size and proliferation and in addition restored hollow lumens, Laminin V, GM130 and E-cadherin. Were Akt upstream of ERK activation, removing it would have carried the late lumen and polarity phenotypes with it, and it did not. The branches therefore run in parallel from the receptor, each with its own outputs. So the cross-branch readouts do not move: pERK1/2 is unchanged when Akt is blocked, and pAkt T308 is unchanged when MEK/ERK is blocked. A rebound rise in pAkt is excluded too, because feedback relief would need the blocked branch to act back on the receptor, whose ligand supply and activation are untouched here. The two same-branch readouts are the engagement controls and fall: pAkt T308 under the Akt inhibitor and pERK1/2 under UO126, matching the phenotype reversion each treatment produced."
+}

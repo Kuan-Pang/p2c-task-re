@@ -1,0 +1,147 @@
+{
+  "gold.json": {
+    "verdicts": {
+      "e1": "yes",
+      "e2": "yes",
+      "j0": "yes",
+      "j1": "yes",
+      "j2": "yes",
+      "j3": "yes"
+    },
+    "consistency": "no",
+    "s_core": 1.0,
+    "s_judge": 1.0,
+    "s": 1.0,
+    "pass": true,
+    "status": "ok"
+  },
+  "wrong_experiment.json": {
+    "verdicts": {
+      "e1": "no",
+      "e2": "no",
+      "j0": "no",
+      "j1": "no",
+      "j2": "no",
+      "j3": "no"
+    },
+    "consistency": "no",
+    "s_core": 0.0,
+    "s_judge": 0.0,
+    "s": 0.0,
+    "pass": false,
+    "status": "ok"
+  },
+  "partial.json": {
+    "verdicts": {
+      "e1": "yes",
+      "e2": "no",
+      "j0": "yes",
+      "j1": "yes",
+      "j2": "no",
+      "j3": "no"
+    },
+    "consistency": "no",
+    "s_core": 0.5,
+    "s_judge": 0.375,
+    "s": 0.425,
+    "pass": false,
+    "status": "ok"
+  },
+  "wrong_rationale.json": {
+    "verdicts": {
+      "e1": "yes",
+      "e2": "yes",
+      "j0": "yes",
+      "j1": "no",
+      "j2": "yes",
+      "j3": "no"
+    },
+    "consistency": "no",
+    "s_core": 1.0,
+    "s_judge": 0.375,
+    "s": 0.625,
+    "pass": false,
+    "status": "ok"
+  },
+  "no_rationale.json": {
+    "verdicts": {
+      "e1": "yes",
+      "e2": "yes",
+      "j0": "no",
+      "j1": "no",
+      "j2": "no",
+      "j3": "no"
+    },
+    "consistency": "no",
+    "s_core": 1.0,
+    "s_judge": 0.0,
+    "s": 0.4,
+    "pass": false,
+    "status": "ok",
+    "evidence": "Cd4-Cre"
+  },
+  "hedge.json": {
+    "verdicts": {
+      "e1": "no",
+      "e2": "no",
+      "j0": "no",
+      "j1": "no",
+      "j2": "no",
+      "j3": "no"
+    },
+    "consistency": "no",
+    "s_core": 0.0,
+    "s_judge": 0.0,
+    "s": 0.0,
+    "pass": false,
+    "status": "ok"
+  },
+  "constant.json": {
+    "verdicts": {
+      "e1": "no",
+      "e2": "no",
+      "j0": "no",
+      "j1": "no",
+      "j2": "no",
+      "j3": "no"
+    },
+    "consistency": "no",
+    "s_core": 0.0,
+    "s_judge": 0.0,
+    "s": 0.0,
+    "pass": false,
+    "status": "ok"
+  },
+  "missing_field.json": {
+    "verdicts": {
+      "e1": "no",
+      "e2": "no",
+      "j0": "no",
+      "j1": "no",
+      "j2": "no",
+      "j3": "no"
+    },
+    "consistency": "no",
+    "s_core": 0.0,
+    "s_judge": 0.0,
+    "s": 0.0,
+    "pass": false,
+    "status": "ok"
+  },
+  "random_seeded.json": {
+    "verdicts": {
+      "e1": "no",
+      "e2": "no",
+      "j0": "no",
+      "j1": "no",
+      "j2": "no",
+      "j3": "no"
+    },
+    "consistency": "no",
+    "s_core": 0.0,
+    "s_judge": 0.0,
+    "s": 0.0,
+    "pass": false,
+    "status": "ok"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "arms": {
+      "LPS + anti-TLR4": "lost",
+      "LPS + anti-CD14": "lost",
+      "LPS + polymyxin B": "lost",
+      "LPS + IFN-gamma priming": "lost"
+    }
+  },
+  "rationale": "Every manipulation listed interferes with the pathway somewhere, so the TNF response is abolished in all four arms."
+}

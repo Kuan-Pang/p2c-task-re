@@ -1,0 +1,4 @@
+# @package _global_
+# M3 full run over all 455 deduped papers. Stages land in M1–M2.
+run_name: full
+run_stages: [select, facts, architect, build, critic, adversary, verify, difficulty, audit, package]

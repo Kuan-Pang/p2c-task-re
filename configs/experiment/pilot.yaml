@@ -1,0 +1,18 @@
+# @package _global_
+# M1 pilot (PLAN §11): 5 train papers → 10 questions for hand review. Stages land in M1.
+run_name: pilot
+run_stages: [select, facts, architect, build, critic, adversary, verify, difficulty, package, review]
+budget_usd: 150
+stages:
+  gates:
+    difficulty:
+      k: 3                  # reduced D, below the usual minimum: indicative only, never used for a cap
+pilot:
+  max_tasks: 10
+  max_tasks_per_paper: 3
+  papers:                   # DOI suffixes, pinned so the pilot is reproducible
+    - 2026.02.17.706358     # P1 Api5–FGF2, breast epithelium
+    - 2026.03.11.710967     # P2 microglial CD22, Huntington's
+    - 2026.04.25.720790     # P3 PRMT7 restricts CD8+ expansion
+    - 2026.04.08.717325     # P4 Cxcl11, zebrafish kidney regeneration
+    - 2026.05.28.728506     # P5 γc cytokines license IL-1 inflammation

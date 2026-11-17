@@ -1,0 +1,33 @@
+# Written by p2c_task_re.stages.package (docs/task_format.md §8). Re-run the packager rather than editing.
+schema_version = "1.4"
+artifacts = ["/app/output"]
+
+[task]
+name = "p2c/2026.02.17.706358-f2-fwd-01"
+version = "1.0.0"
+
+[metadata]
+family = "F2"
+direction = "forward"
+paper_id = "2026.02.17.706358"
+split = "train"
+provenance = "handbuilt"
+
+[environment]
+
+[agent]
+timeout_sec = 1800
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 1800
+
+[verifier.env]
+ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}"
+OPENAI_API_KEY = "${OPENAI_API_KEY}"
+JUDGE_MODEL = "${JUDGE_MODEL:-claude-sonnet-5-5}"
+JUDGE_REGRADE_MODEL = "${JUDGE_REGRADE_MODEL:-gpt-6.1-sol}"
+JUDGE_SAMPLES = "${JUDGE_SAMPLES:-3}"
+JUDGE_EFFORT = "${JUDGE_EFFORT:-medium}"
+JUDGE_RETRIES = "${JUDGE_RETRIES:-2}"
+JUDGE_CONCURRENCY = "${JUDGE_CONCURRENCY:-8}"

@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "mechanism_primary": "Ligated CD22 has its ITIM tyrosine phosphorylated, which recruits SHP-1 and damps the phosphorylation-dependent signalling that drives engulfment, so blocking the receptor or the motif releases phagocytosis.",
+    "key_entities": [
+      "CD22",
+      "ITIM motif",
+      "SHP-1"
+    ]
+  },
+  "rationale": ""
+}

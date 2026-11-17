@@ -1,0 +1,94 @@
+{
+  "task_id": "2026.02.17.706358-f2-fwd-01",
+  "family": "F2",
+  "direction": "forward",
+  "tau": 0.7,
+  "w_core": 0.6,
+  "rationale_word_cap": 250,
+  "core": {
+    "type": "arm_enum",
+    "values": [
+      "decreased",
+      "unchanged",
+      "increased"
+    ],
+    "arms": [
+      "pERK_after_Akti",
+      "pAkt_after_UO126",
+      "pAkt_after_Akti",
+      "pERK_after_UO126"
+    ],
+    "critical": [
+      "pERK_after_Akti",
+      "pAkt_after_UO126",
+      "pERK_after_UO126"
+    ]
+  },
+  "criteria": [
+    {
+      "id": "c1",
+      "section": "branch architecture",
+      "text": "Recognizes the dissociation between the two treatments' phenotypes in Api5 OE acini: Akt-branch inhibition reverses the volume, surface-area, cell-number, sphericity and Ki-67 changes but leaves lumen filling and the Laminin V, GM130 and E-cadherin defects in place, whereas MEK/ERK inhibition reverses the size and proliferation changes and in addition restores hollow lumens and all three polarity markers.",
+      "points": 0,
+      "core": false,
+      "capability": "comparison",
+      "step": 2,
+      "grounding": {
+        "source": "paper",
+        "quote": "However, inhibition of Akt signalling in Api5 OE spheroids had no effect on polarity (Figure 4j-m)."
+      }
+    },
+    {
+      "id": "c2",
+      "section": "branch architecture",
+      "text": "Uses that dissociation to conclude that the Akt and MEK/ERK branches run in parallel below FGFR1 rather than one through the other - if the Akt branch drove ERK activation, blocking it would also have removed the late lumen-filling and polarity phenotypes - and therefore that blocking one branch leaves the other branch's phosphorylation unchanged.",
+      "points": 4,
+      "core": false,
+      "capability": "control-logic",
+      "step": 2,
+      "grounding": {
+        "source": "paper",
+        "quote": "To check if there was crosstalk between Akt and ERK signalling pathways, pERK1&2 activation upon Akti addition and pAkt T308 levels upon UO126 addition were investigated (Figure S4j-m). No observable changes were detected, thereby indicating the absence of any crosstalk between the two signalling cascades."
+      }
+    },
+    {
+      "id": "c3",
+      "section": "shared upstream input",
+      "text": "Recognizes that neither single-branch inhibitor changed Api5 or FGF2 levels, so the FGF2/FGFR1/FRS2alpha input feeding both branches is the same as in untreated Api5 OE spheroids.",
+      "points": 0,
+      "core": false,
+      "capability": "control-logic",
+      "step": 1,
+      "grounding": {
+        "source": "paper",
+        "quote": "Moreover, Api5 and FGF2 levels remained unchanged following ERK inhibition (Figure 5a-c)."
+      }
+    },
+    {
+      "id": "c4",
+      "section": "shared upstream input",
+      "text": "Uses the unchanged upstream input to exclude a rebound rise in the untouched branch, concluding specifically that pAkt T308 after MEK/ERK inhibition is unchanged rather than increased by relief of ERK-dependent negative feedback.",
+      "points": 4,
+      "core": false,
+      "capability": "direction",
+      "step": 3,
+      "grounding": {
+        "source": "k_premise",
+        "text": "Blocking a kinase branch below a receptor does not alter that receptor's own activation when ligand and receptor levels are unchanged; a feedback-driven rise in a parallel branch requires the blocked branch to act back on the shared upstream node."
+      }
+    },
+    {
+      "id": "c5",
+      "section": "target engagement",
+      "text": "Justifies the two same-branch readouts as on-target engagement controls - each inhibitor acting at its own node lowers its own downstream phosphorylation - consistent with the phenotype reversion each treatment produced in Api5 OE spheroids.",
+      "points": 2,
+      "core": false,
+      "capability": "design",
+      "step": 3,
+      "grounding": {
+        "source": "paper",
+        "quote": "A decrease in pERK1&2 activation was observed upon UO126 addition in both day 12 and 16 Api5 OE spheroids compared to untreated (Figure S4f, g)."
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "answer": {
+    "markers": {
+      "TCF1": "up",
+      "Granzyme B": "down",
+      "Ki67": "up",
+      "CD44": "unchanged",
+      "IFN-gamma": "unchanged"
+    }
+  },
+  "rationale": "Losing Prmt7 opens the Tcf7 locus, so TCF1 rises, and closes the Gzmb locus, so granzyme B falls. More of the knockout cells are cycling, which raises Ki67. CD44 and per-cell interferon-gamma are equal between genotypes and stay flat."
+}

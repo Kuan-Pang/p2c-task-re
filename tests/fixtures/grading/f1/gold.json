@@ -1,0 +1,14 @@
+{
+  "task_id": "fixture-f1-fwd-01",
+  "answer": {
+    "markers": {
+      "TCF1": "up",
+      "Granzyme B": "down",
+      "Ki67": "up",
+      "KLRG1": "unchanged",
+      "CD44": "unchanged",
+      "IFN-gamma": "unchanged"
+    }
+  },
+  "rationale": "Losing Prmt7 opens the Tcf7 locus, so the stem-like factor TCF1 rises. The Gzmb locus closes in those same cells, so granzyme B protein falls; the bigger expansion must not be read as a cytotoxicity phenotype, since the chromatin at Gzmb says the opposite. More knockout cells are dividing, which puts Ki67 up. Nothing in the premises separates the genotypes at Klrg1, on CD44 or in per-cell interferon-gamma, so those three stay where they are."
+}

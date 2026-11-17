@@ -1,0 +1,79 @@
+{
+  "task_id": "fixture-f2-fwd-01",
+  "family": "F2",
+  "direction": "forward",
+  "tau": 0.7,
+  "w_core": 0.6,
+  "rationale_word_cap": 250,
+  "core": {
+    "type": "arm_enum",
+    "values": [
+      "increased",
+      "lost",
+      "unchanged"
+    ],
+    "arms": [
+      "LPS + anti-TLR4",
+      "LPS + anti-CD14",
+      "LPS + polymyxin B",
+      "LPS + IFN-gamma priming"
+    ],
+    "critical": [
+      "LPS + anti-TLR4"
+    ]
+  },
+  "criteria": [
+    {
+      "id": "c0",
+      "section": "cue",
+      "text": "Notes that the stimulation dose is 100 ng/ml, the high dose.",
+      "points": 0,
+      "core": false,
+      "capability": "control-logic",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "stimulated for 6 hours with 100 ng/ml lipopolysaccharide"
+      }
+    },
+    {
+      "id": "c1",
+      "section": "step 1",
+      "text": "Explains that blocking TLR4 removes the only LPS receptor these cells have, so no TNF is produced above the unstimulated control.",
+      "points": 3,
+      "core": false,
+      "capability": "control-logic",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "the only LPS receptor these cells express"
+      }
+    },
+    {
+      "id": "c2",
+      "section": "step 2",
+      "text": "Uses the dose dependence of the CD14 requirement to conclude that blocking CD14 leaves the response to 100 ng/ml LPS where it was.",
+      "points": 3,
+      "core": false,
+      "capability": "control-logic",
+      "step": 2,
+      "grounding": {
+        "source": "instruction",
+        "quote": "blocking CD14 lowers the response to 1 ng/ml LPS but has no effect at 100 ng/ml"
+      }
+    },
+    {
+      "id": "c3",
+      "section": "step 3",
+      "text": "Attributes the larger response after interferon-gamma priming to more surface TLR4-MD-2 rather than to a second stimulus.",
+      "points": 2,
+      "core": false,
+      "capability": "mechanism",
+      "step": 3,
+      "grounding": {
+        "source": "instruction",
+        "quote": "Priming with interferon-gamma for 16 hours before stimulation raises surface TLR4 and MD-2"
+      }
+    }
+  ]
+}

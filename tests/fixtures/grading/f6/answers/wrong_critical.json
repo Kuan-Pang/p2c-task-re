@@ -1,0 +1,12 @@
+{
+  "answer": {
+    "arms": {
+      "CM from untreated macrophages": "unchanged",
+      "CM from IL-4-treated macrophages": "unchanged",
+      "CM from IL-4 + STAT6 inhibitor macrophages": "unchanged",
+      "CM from IL-4-treated Tgfb1-KO macrophages": "unchanged"
+    },
+    "state": "an IL-4-polarised, TGF-beta1-secreting macrophage"
+  },
+  "rationale": "IL-4 is an anti-inflammatory cytokine, so medium from IL-4-treated macrophages should calm the fibroblasts rather than drive matrix, and I expect no change in any arm."
+}

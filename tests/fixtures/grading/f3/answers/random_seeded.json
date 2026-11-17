@@ -1,0 +1,19 @@
+{
+  "answer": {
+    "ranking": [
+      [
+        "IL-1beta"
+      ],
+      [
+        "TNF-alpha"
+      ],
+      [
+        "IL-6"
+      ],
+      [
+        "TGF-beta"
+      ]
+    ]
+  },
+  "rationale": "Order drawn at random from the 24 permutations with seed 2028; no derivation."
+}

@@ -1,0 +1,6 @@
+{
+  "answer": {
+    "experiment": "Cross the conditional Il23r allele to Cd4-Cre and to Rorc-Cre and look at the mice."
+  },
+  "rationale": "Removing the receptor from one population at a time is the way to separate the two explanations, since the antibody cannot. I would start from the conditional allele and the two drivers that are already available."
+}

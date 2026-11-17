@@ -1,0 +1,14 @@
+{
+  "answer": {
+    "ranking": [
+      [
+        "IL-1beta",
+        "TNF-alpha"
+      ],
+      [
+        "IL-6"
+      ]
+    ]
+  },
+  "rationale": "The two NF-kB cytokines tie at the top and IL-6 follows. TGF-beta arrests the cycle, so it does not belong on a proliferation ranking at all."
+}

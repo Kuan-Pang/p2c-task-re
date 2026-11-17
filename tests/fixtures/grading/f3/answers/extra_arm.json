@@ -1,0 +1,20 @@
+{
+  "answer": {
+    "ranking": [
+      [
+        "IL-1beta",
+        "TNF-alpha"
+      ],
+      [
+        "IL-6"
+      ],
+      [
+        "TGF-beta"
+      ],
+      [
+        "IFN-gamma"
+      ]
+    ]
+  },
+  "rationale": "The two NF-kB cytokines tie at the top, IL-6 follows at about half the effect, TGF-beta arrests the cycle, and interferon-gamma would be weaker still."
+}

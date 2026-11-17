@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "markers": {
+      "TCF1": "up",
+      "Granzyme B": "down",
+      "Ki67": "up",
+      "KLRG1": "unchanged",
+      "CD44": "unchanged",
+      "IFN-gamma": "unchanged"
+    }
+  },
+  "rationale": "Opening at Tcf7 could raise TCF1, though a KO that expands harder might just as well burn through its stem-like pool, so TCF1 may be up or down. Granzyme B could fall with the closed Gzmb locus or rise with the extra expansion. Ki67 may go either way. The other three are probably flat, or possibly not."
+}

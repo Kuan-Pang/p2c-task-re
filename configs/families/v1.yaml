@@ -1,0 +1,8 @@
+# Task families (PLAN §7). How each family's s_core is computed is grade.py's (docs/task_format.md §5).
+f1: {enabled: true, directions: [forward],           w_core: 0.60, rationale_word_cap: 250}
+f2: {enabled: true, directions: [forward, backward], w_core: 0.60, rationale_word_cap: 250}
+f3: {enabled: true, directions: [forward],           w_core: 0.60, rationale_word_cap: 250}
+f4: {enabled: true, directions: [backward],          w_core: 0.60, rationale_word_cap: 250}
+f5: {enabled: true, directions: [],                  w_core: 0.40, rationale_word_cap: 400}
+f6: {enabled: true, directions: [forward, backward], w_core: 0.60, rationale_word_cap: 250}
+f7: {enabled: true, directions: [],                  w_core: 0.40, rationale_word_cap: 400}

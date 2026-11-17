@@ -1,0 +1,128 @@
+{
+  "gold.json": {
+    "verdicts": {
+      "c0": "yes",
+      "c1": "yes",
+      "c2": "yes",
+      "c3": "yes"
+    },
+    "consistency": "no",
+    "s_core": 1.0,
+    "s_judge": 1.0,
+    "s": 1.0,
+    "pass": true,
+    "status": "ok"
+  },
+  "swapped_pair.json": {
+    "verdicts": {
+      "c0": "yes",
+      "c1": "yes",
+      "c2": "no",
+      "c3": "no"
+    },
+    "consistency": "no",
+    "s_core": 0.8,
+    "s_judge": 0.375,
+    "s": 0.63,
+    "pass": false,
+    "status": "ok"
+  },
+  "wrong_top.json": {
+    "verdicts": {
+      "c0": "yes",
+      "c1": "no",
+      "c2": "yes",
+      "c3": "yes"
+    },
+    "consistency": "no",
+    "s_core": 0.0,
+    "s_judge": 0.625,
+    "s": 0.25,
+    "pass": false,
+    "status": "ok"
+  },
+  "all_tied.json": {
+    "verdicts": {
+      "c0": "no",
+      "c1": "no",
+      "c2": "no",
+      "c3": "no"
+    },
+    "consistency": "no",
+    "s_core": 0.0,
+    "s_judge": 0.0,
+    "s": 0.0,
+    "pass": false,
+    "status": "ok"
+  },
+  "missing_arm.json": {
+    "verdicts": {
+      "c0": "yes",
+      "c1": "yes",
+      "c2": "no",
+      "c3": "yes"
+    },
+    "consistency": "no",
+    "s_core": 0.0,
+    "s_judge": 0.625,
+    "s": 0.25,
+    "pass": false,
+    "status": "ok"
+  },
+  "extra_arm.json": {
+    "verdicts": {
+      "c0": "yes",
+      "c1": "yes",
+      "c2": "yes",
+      "c3": "yes"
+    },
+    "consistency": "no",
+    "s_core": 0.0,
+    "s_judge": 1.0,
+    "s": 0.4,
+    "pass": false,
+    "status": "ok"
+  },
+  "constant_as_listed.json": {
+    "verdicts": {
+      "c0": "no",
+      "c1": "no",
+      "c2": "no",
+      "c3": "no"
+    },
+    "consistency": "no",
+    "s_core": 0.0,
+    "s_judge": 0.0,
+    "s": 0.0,
+    "pass": false,
+    "status": "ok"
+  },
+  "hedge.json": {
+    "verdicts": {
+      "c0": "no",
+      "c1": "no",
+      "c2": "no",
+      "c3": "no"
+    },
+    "consistency": "no",
+    "s_core": 1.0,
+    "s_judge": 0.0,
+    "s": 0.6,
+    "pass": false,
+    "status": "ok"
+  },
+  "random_seeded.json": {
+    "verdicts": {
+      "c0": "no",
+      "c1": "no",
+      "c2": "no",
+      "c3": "no"
+    },
+    "consistency": "no",
+    "s_core": 0.0,
+    "s_judge": 0.0,
+    "s": 0.0,
+    "pass": false,
+    "status": "ok"
+  }
+}

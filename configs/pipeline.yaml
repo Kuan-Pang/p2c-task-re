@@ -1,0 +1,27 @@
+# Primary config. Compose with an experiment: `uv run p2c-pipeline +experiment=eval eval.dataset=examples/tasks`.
+defaults:
+  - data: post_jan
+  - models: default
+  - families: v1
+  - stages: default
+  - _self_
+
+run_name: dev
+run_stages: []          # which stages to run; run.py fixes their order and says which milestone adds each
+budget_usd: null        # whole-run spend cap, summed from calls.jsonl; null = no cap
+concurrency: 8          # trials in flight in `evaluate`; each grader adds stages.grading.judge_concurrency
+
+eval:                   # used by the `evaluate` stage (in-process runner, PLAN §3)
+  dataset: null         # a folder of Harbor task folders
+  agents: [oracle, nop] # oracle | nop | a role name from models.roles (panel expands to its models)
+  k: 1                  # samples per (agent, task)
+
+hydra:
+  job:
+    name: pipeline
+    chdir: false
+  run:
+    dir: outputs/runs/${run_name}/${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: outputs/sweeps/${run_name}/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${hydra.job.override_dirname}

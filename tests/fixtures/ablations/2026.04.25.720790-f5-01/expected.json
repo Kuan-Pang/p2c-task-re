@@ -1,0 +1,162 @@
+{
+  "task_id": "2026.04.25.720790-f5-01",
+  "family": "F5",
+  "tau": 0.7,
+  "w_core": 0.4,
+  "judge_points_total": 11,
+  "note": "Verdicts are what a careful judge should return per criterion id under the judge protocol in docs/task_format.md section 6 (one criterion at a time, evidence quote must occur verbatim and outside masked spans, a hedge does not satisfy a criterion). Scores are recomputed from those verdicts by the formulas in section 6. Criterion e4 was tightened after the M0 live run credited it from the mechanism_primary sentence alone, which duplicates the core (PLAN section 4, non-redundancy): it now grades the step-2 derivation itself - MS54's post-translational protein removal as the premise used, the degrader behaving like the genetic deletion as the conclusion drawn - so a verdict on it follows from the rationale rather than from the answer fields. Its expected verdicts are unchanged: yes for the gold and the paraphrase, no everywhere else.",
+  "gold": {
+    "file": "../../../../examples/tasks/2026.04.25.720790-f5-01/tests/gold.json",
+    "class": "must_pass",
+    "criteria": {
+      "k1": "yes",
+      "k2": "yes",
+      "k3": "yes",
+      "e1": "yes",
+      "e2": "yes",
+      "e3": "yes",
+      "e4": "yes",
+      "e5": "yes"
+    },
+    "consistency": "no_contradiction",
+    "s_core": 1.0,
+    "s_judge": 1.0,
+    "s": 1.0,
+    "pass": true
+  },
+  "ablations": {
+    "gold_paraphrase.json": {
+      "class": "must_pass",
+      "criteria": {
+        "k1": "yes",
+        "k2": "yes",
+        "k3": "yes",
+        "e1": "yes",
+        "e2": "yes",
+        "e3": "yes",
+        "e4": "yes",
+        "e5": "yes"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 1.0,
+      "s_judge": 1.0,
+      "s": 1.0,
+      "pass": true,
+      "why": "Same mechanism in different words; all three core criteria and all judged steps are present."
+    },
+    "wrong_core_methylation.json": {
+      "class": "must_fail",
+      "criteria": {
+        "k1": "no",
+        "k2": "no",
+        "k3": "no",
+        "e1": "no",
+        "e2": "no",
+        "e3": "no",
+        "e4": "no",
+        "e5": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 0.0,
+      "s_judge": 0.0,
+      "s": 0.0,
+      "pass": false,
+      "why": "The catalysis-dependent fork: the mechanism requires methylation, which is exactly what the withheld result excludes. All three core criteria fail, so s_core = 0."
+    },
+    "textbook_prior.json": {
+      "class": "must_fail",
+      "criteria": {
+        "k1": "no",
+        "k2": "no",
+        "k3": "no",
+        "e1": "no",
+        "e2": "no",
+        "e3": "no",
+        "e4": "no",
+        "e5": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 0.0,
+      "s_judge": 0.0,
+      "s": 0.0,
+      "pass": false,
+      "why": "The prior-only answer about PRMT7's best-known biology; it ignores the cytoplasmic p65 premises and the inhibitor arm. s_core = 0."
+    },
+    "constant_answer.json": {
+      "class": "must_fail",
+      "criteria": {
+        "k1": "no",
+        "k2": "no",
+        "k3": "no",
+        "e1": "no",
+        "e2": "no",
+        "e3": "no",
+        "e4": "no",
+        "e5": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 0.0,
+      "s_judge": 0.0,
+      "s": 0.0,
+      "pass": false,
+      "why": "Best constant answer for a mechanism family: name the stem's own mediator noun and stop. s_core = 0."
+    },
+    "correct_core_wrong_mechanism.json": {
+      "class": "must_not_pass",
+      "criteria": {
+        "k1": "no",
+        "k2": "no",
+        "k3": "no",
+        "e1": "no",
+        "e2": "no",
+        "e3": "no",
+        "e4": "no",
+        "e5": "no"
+      },
+      "consistency": "contradiction",
+      "s_core": 0.0,
+      "s_judge": 0.0,
+      "s": 0.0,
+      "pass": false,
+      "why": "For F5 the core *is* the mechanism, so this ablation contradicts itself by construction: mechanism_primary commits to a non-catalytic, protein-level restraint on p65 while the rationale argues a catalytic one (family redundancy covers the lost methylation; 'degradation is simply a stronger form of inhibition' than occupying the active site). The consistency check therefore fires - the real judge said yes 3/3 in the M0 live run - which zeroes every judge criterion, and because F5 scores its core through those same criteria it zeroes s_core too. An earlier version of this entry expected no contradiction and s_core = 1.0, reading the answer fields on their own; that reading was wrong for F5."
+    },
+    "correct_core_no_rationale.json": {
+      "class": "must_not_pass",
+      "criteria": {
+        "k1": "yes",
+        "k2": "yes",
+        "k3": "yes",
+        "e1": "no",
+        "e2": "no",
+        "e3": "no",
+        "e4": "no",
+        "e5": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 1.0,
+      "s_judge": 0.0,
+      "s": 0.4,
+      "pass": false,
+      "why": "The core criteria are satisfiable from mechanism_primary and key_entities alone, but no judged step can be quoted, so s_judge = 0."
+    },
+    "hedge_everything.json": {
+      "class": "must_not_pass",
+      "criteria": {
+        "k1": "no",
+        "k2": "no",
+        "k3": "no",
+        "e1": "no",
+        "e2": "no",
+        "e3": "no",
+        "e4": "no",
+        "e5": "no"
+      },
+      "consistency": "no_contradiction",
+      "s_core": 0.0,
+      "s_judge": 0.0,
+      "s": 0.0,
+      "pass": false,
+      "why": "Two mechanisms offered in one hedged sentence; a hedge satisfies no criterion, so s_core = 0 as well as s_judge = 0."
+    }
+  }
+}

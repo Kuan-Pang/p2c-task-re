@@ -1,0 +1,10 @@
+{
+  "answer": {
+    "arms": {
+      "LPS + anti-TLR4": "lost",
+      "LPS + polymyxin B": "lost",
+      "LPS + IFN-gamma priming": "increased"
+    }
+  },
+  "rationale": "TLR4-MD-2 is the only LPS receptor here, so blocking it leaves no TNF above baseline, and polymyxin B sequesters the ligand to the same end. Interferon-gamma priming raises surface receptor, so that arm runs above the reference."
+}

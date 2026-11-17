@@ -221,3 +221,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# p2c-task-re
+outputs/
+images/
+.api_keys
+
+# Harbor job output, and scripts/harbor.sbatch's Slurm log
+jobs/
+p2c-harbor-*.out

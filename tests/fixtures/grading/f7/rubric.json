@@ -1,0 +1,91 @@
+{
+  "task_id": "fixture-f7-01",
+  "family": "F7",
+  "direction": null,
+  "tau": 0.7,
+  "w_core": 0.4,
+  "rationale_word_cap": 400,
+  "core": {
+    "type": "judged"
+  },
+  "criteria": [
+    {
+      "id": "e1",
+      "section": "design",
+      "text": "Proposes deleting IL-23R in one population at a time, using the conditional allele with a T-cell driver and with an ILC3 driver.",
+      "points": 3,
+      "core": true,
+      "capability": "design",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "A conditional Il23r allele, a Cd4-Cre line and a Rorc-Cre line are all available"
+      }
+    },
+    {
+      "id": "e2",
+      "section": "design",
+      "text": "States the readout that separates the two explanations: the colitis score in each population-restricted deletion.",
+      "points": 3,
+      "core": true,
+      "capability": "design",
+      "step": 2,
+      "grounding": {
+        "source": "instruction",
+        "quote": "a blocking antibody against IL-23 reduces disease"
+      }
+    },
+    {
+      "id": "j0",
+      "section": "cue",
+      "text": "Notes that both populations express IL-23R, so expression cannot discriminate.",
+      "points": 0,
+      "core": false,
+      "capability": "design",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "both populations express IL-23R"
+      }
+    },
+    {
+      "id": "j1",
+      "section": "step 1",
+      "text": "Explains that the Rag1-KO result shows ILC3s are sufficient but not that T cells are dispensable, which is why each population must be tested separately.",
+      "points": 3,
+      "core": false,
+      "capability": "control-logic",
+      "step": 1,
+      "grounding": {
+        "source": "instruction",
+        "quote": "the blocking antibody reduces disease in Rag1-KO mice, which have ILC3s but no T cells"
+      }
+    },
+    {
+      "id": "j2",
+      "section": "step 2",
+      "text": "Includes a control that keeps the comparison interpretable, such as the blocking antibody or a Cre-only arm.",
+      "points": 3,
+      "core": false,
+      "capability": "design",
+      "step": 2,
+      "grounding": {
+        "source": "instruction",
+        "quote": "a blocking antibody against IL-23 reduces disease"
+      }
+    },
+    {
+      "id": "j3",
+      "section": "caveat",
+      "text": "Notes that a partial reduction in both arms would mean both populations contribute, and that the design can show this.",
+      "points": 2,
+      "core": false,
+      "capability": "uncertainty",
+      "step": 3,
+      "grounding": {
+        "source": "instruction",
+        "quote": "untreated Rag1-KO mice reach about half the disease score of untreated wild-type mice"
+      }
+    }
+  ]
+}

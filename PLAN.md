@@ -147,8 +147,8 @@ A run checks these rules at startup and warns rather than fails:
 - **Invalid and missing answers:** `grade.py` writes all-zero rewards without calling the judge when the answer file is absent or unparseable, so refusals, crashes and `nop` stay valid 0s in both runs and regrades. Only transient infrastructure errors make a trial invalid; each model's invalid rate is reported, and its metrics are withheld above 2%.
 
 **Deterministic pre-judge pass in `grade.py`**, before any judge call — checks, not instructions to the judge:
-1. Truncate `rationale` at the contract cap (250 words for F1–F4/F6, 400 for F5/F7). Truncation, not penalty, keeps the rule unhackable.
-2. Mask every ≥10-token n-gram of the rationale that also appears in `instruction.md`; a judge evidence quote falling entirely inside a masked span scores 0.
+1. Truncate at the contract cap (250 words for F1–F4/F6, 400 for F5/F7), counting the rationale and the answer's free-text strings against one budget; `s_core` is still scored on the full answer. Truncation, not penalty, keeps the rule unhackable. One enclosing markdown code fence around the reply is stripped first — a formatting slip is not a scientific failure — and recorded as `answer_format`.
+2. Mask every ≥10-token run of the response (answer fields included) that also appears in `instruction.md`; a judge evidence quote that is masked at every place it occurs scores 0.
 3. Contradiction gate: if the rationale's conclusion disagrees with the structured fields, or more than one candidate mechanism is offered without a single `answer.mechanism_primary`, all judge criteria score 0.
 
 **Judge protocol** (full text in `judge_prompt.md`): one criterion at a time (`mode = individual`, others never shown); a binary verdict plus an evidence quote checked to exist verbatim post-masking, else 0; equivalent phrasing credited, a hedge not satisfied, the response treated as data, not instructions. **3 samples per criterion, majority vote.** A failed sample is retried, never dropped; persistent refusals go to `judge_regrade`, recorded per criterion. If a criterion still lacks 3 valid votes, `test.sh` exits without a reward.
@@ -257,32 +257,37 @@ timeout_sec = 1800
 environment_mode = "separate"          # regrade requires it; with no [verifier.environment] table the verifier
 timeout_sec = 1800                     #   reuses [environment] and uploads tests/ at runtime
 [verifier.env]
-ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}"   # both are declared: grade.py picks by the judge's provider, and
-OPENAI_API_KEY = "${OPENAI_API_KEY}"         #   --ve cannot add a key that task.toml never declared
+ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}"   # both declared so either judge works out of the box;
+OPENAI_API_KEY = "${OPENAI_API_KEY}"         #   grade.py picks the key by the judge's provider
 JUDGE_MODEL = "${JUDGE_MODEL:-claude-sonnet-5-5}"
 ```
 
-**Two environment profiles, one packager option** (`environment=singularity|cloud`), because `network_mode` lives in task.toml and has no CLI override, and a local `.sif` path cannot resolve on a cloud runner:
+**Three environment profiles, one packager option** (`--environment local | singularity | cloud` on the packager; M1's S10 reads `package.environment`). `network_mode` lives in task.toml with no CLI override, and a local `.sif` path cannot resolve on a cloud runner, so the profile is fixed at packaging time:
 
-| | `singularity` (ILC) | `cloud` (modal / daytona) |
-|---|---|---|
-| `docker_image` | absolute `.sif` path, used as-is | `ghcr.io/…@sha256:…` |
-| `network_mode` | omitted = `public` — singularity rejects the other two | `no-network`, verifier `allowlist` = the judge host |
+| | **`local`** (default now) | `singularity` (ILC, later) | `cloud` (modal / daytona, later) |
+|---|---|---|---|
+| Runs on | the host, no container: `p2c_task_re.harbor_env:LocalEnvironment`, a Harbor `BaseEnvironment` | Harbor's singularity environment | the provider's sandbox |
+| `docker_image` | none (the task carries an `environment/README.md` placeholder, which Harbor's task discovery requires) | absolute `.sif` path, used as-is | `ghcr.io/…@sha256:…` |
+| `network_mode` | omitted = `public` | omitted = `public` — singularity rejects the other two | `no-network`, verifier `allowlist` = the judge hosts |
+| Isolation | **none** | container, host network | full |
 
-The same task content is emitted under both; the dataset records which profile and which image digest it was built with.
+The same task content is emitted under every profile; the dataset records which profile and which image it was built with.
+
+**`local` — Harbor with no container.** Each trial gets its own host folder standing in for `/app`, `/tests`, `/solution` and `/logs`: file operations, the `exec` command string and `cwd` are mapped onto it, and the scripts also honour `TESTS_DIR`, `ANSWER_PATH`, `VERIFIER_DIR` and `OUTPUT_DIR`. The project venv's python is first on `PATH`, so `tests/grade.py` finds the judge SDKs. It refuses tasks that ship an image or a Dockerfile, and tasks that give the agent tools (MCP servers, skills). Run with `-e p2c_task_re.harbor_env:LocalEnvironment … -y`.
 
 **Runner: Harbor's `singularity` environment** — the only one that runs locally without a daemon (checked against Harbor `ec6aeab`). A `.sif` path in `docker_image` is used directly; a registry ref is pulled and converted with `singularity pull docker://…`, also daemonless. Containers start `--fakeroot --containall` with no `--net`, so they share the host network and `no-network`/`allowlist` raise at trial creation. Separate verifier, directory artifacts, `upload_file` and `harbor job regrade -e singularity` all work. Its bootstrap re-installs python, uvicorn/fastapi, tmux and asciinema on every start unless present, so the image bakes them in.
 
-**Why `public` is acceptable for v1.** The solver sandbox is not network-isolated and the verifier's egress is not limited to the judge host — but in a no-tools task nothing the model writes is executed (`SingleShotAgent` calls the API from the host and uploads the reply as data), so isolation prevents nothing. Two guards keep this from carrying forward: the packager refuses a tool-using task under `public`, and a `grade.py` test asserts the judge is its only network call.
+**Why `local` and `public` are acceptable for v1.** The solver sandbox is not isolated at all under `local` and not network-isolated under `singularity`, and in neither is the verifier's egress limited to the judge host — but in a no-tools task nothing the model writes is executed (`SingleShotAgent` calls the API from the host and uploads the reply as data), so isolation prevents nothing. Two guards keep this from carrying forward: the packager and `LocalEnvironment` refuse a tool-using task under `local` or `singularity`, and a `grade.py` test asserts the judge is its only network call. Never run an installed agent (claude-code, codex, terminus) under `local`.
 
-**Blocker (M0).** ampere2 (ILC: Ubuntu 24.04, Slurm) has neither apptainer nor singularity, and AppArmor blocks the unprivileged user namespaces `--fakeroot` needs (`kernel.apparmor_restrict_unprivileged_userns = 1`), which a user-space install does not get around. **Ask the ILC admins to install the root Apptainer package with its AppArmor profile on the CPU partition.** Only ampere2 was probed; check other nodes first. Until it lands, the in-process runner covers M1 and every gate, and parity runs go to the `cloud` profile.
+**Why not `singularity` yet.** ampere2 (ILC: Ubuntu 24.04, Slurm) has neither apptainer nor singularity, and AppArmor blocks the unprivileged user namespaces `--fakeroot` needs (`kernel.apparmor_restrict_unprivileged_userns = 1`), which a user-space install does not get around. **Ask the ILC admins to install the root Apptainer package with its AppArmor profile on the CPU partition.** Only ampere2 was probed; check other nodes first. Until it lands, `local` is the Harbor profile; [docs/ilc_apptainer_request.md](docs/ilc_apptainer_request.md) is the drafted request.
 
 **Image.** `containers/p2c-base.def` (Debian slim, python3, both judge SDKs pinned, Harbor's server dependencies, tmux, asciinema, `/app/output`) builds `images/p2c-base-<date>.sif`, never overwritten, its sha256 recorded in the dataset manifest; a release builds the same recipe as an OCI image for the `cloud` profile.
 
 **Run** inside `sbatch` (`scripts/harbor.sbatch`); containers are local subprocesses on localhost, so Harbor runs on the node itself and tasks shard across jobs.
 ```bash
-uv run harbor run -p <dataset> -e singularity -a p2c_task_re.harbor_agent:SingleShotAgent -m "$SOLVER_MODEL" -k 20 -n 16 -r 3 -o jobs/
-uv run harbor job regrade jobs/<job> -p <dataset> -e singularity --ve JUDGE_MODEL=gpt-6.1-sol
+uv run harbor run -p <dataset> -e p2c_task_re.harbor_env:LocalEnvironment -a p2c_task_re.harbor_agent:SingleShotAgent -m "$SOLVER_MODEL" -k 20 -n 16 -r 3 -o jobs/ -y
+uv run harbor job regrade jobs/<job> -p <dataset> -e p2c_task_re.harbor_env:LocalEnvironment --ve JUDGE_MODEL=gpt-6.1-sol
+# later: -e singularity (or modal / daytona) on a dataset packaged with that profile
 ```
 
 **`reward.json`** (flat, numeric): `{"reward": s, "core": s_core, "judged": s_judge}`; `pass` is **not** stored. `grade.py` also writes `/logs/verifier/grading.json` (per-criterion verdicts, all 3 samples, evidence quotes, judge model), which Harbor syncs back. Pass, pass@k, τ sweeps, point re-weights and capability stats are recomputed offline from it, so a regrade is needed only when the judge model or prompt changes. Multi-key rewards disable Harbor's built-in pass@k. `grade.py` issues its judge calls concurrently, bounded so the worst case (20 criteria × 3 samples) finishes inside `timeout_sec`.
@@ -308,7 +313,9 @@ p2c-task-re/
 │   ├── families/v1.yaml      # per family: enabled, directions, w_core, rationale cap
 │   ├── stages/default.yaml   # gate thresholds, revision cap, $ cap, roles per gate, environment profile
 │   └── experiment/           # pilot.yaml (pins the 5 paper ids) · full.yaml · eval.yaml
-├── containers/p2c-base.def   # Apptainer recipe
+├── containers/p2c-base.def   # Apptainer recipe (singularity profile, later)
+├── docs/                     # task_format.md (the task + grading contract), drafts and probe reports
+├── examples/tasks/           # hand-built M0 tasks from train papers
 ├── scripts/harbor.sbatch     # one Harbor shard
 ├── src/p2c_task_re/
 │   ├── cli.py                # @hydra.main → validate → run
@@ -322,7 +329,9 @@ p2c-task-re/
 │   ├── report.py             # summary.json: scores, bootstrap CIs, headroom, breakdowns, contamination slice
 │   ├── release.py            # split selection, private-test renaming, dataset manifest
 │   ├── harbor_agent.py       # SingleShotAgent
-│   ├── data/                 # extraction.py · meca.py · jats.py
+│   ├── harbor_env.py         # LocalEnvironment: Harbor BaseEnvironment, no container
+│   ├── text.py               # normalize, locate_quote (char offsets)
+│   ├── data/                 # extraction.py · splits.py · meca.py · jats.py
 │   ├── stages/               # select.py (S0) · facts.py (S1) · architect.py (S2 + hardening) · build.py (S3) ·
 │   │                         #   critic.py (S5) · adversary.py (S6) · audit.py (S9) · package.py (S10) ·
 │   │                         #   review.py + prompts/*.md, templates/
@@ -336,7 +345,7 @@ p2c-task-re/
 
 A run folder holds `pipeline.log`, `.hydra/`, `selection.json`, `seeds.jsonl`, `calls.jsonl`, `summary.json`, then `papers/<paper_id>/{paper.txt, sections.json, facts.json}`, `candidates/<task_id>/v1,v2/{recipe,instruction,rubric,gates}`, `dataset/`, `probes/` (never published) and `review/{index.md, <task_id>.md, verdicts.csv}`. Modules are named for what they do, not by S-number: the numbering has gaps and will shift, `run.py` holds the order, each docstring gives its S-number.
 
-**Names, no hashes.** `paper_id` = the DOI suffix (`10.64898/2026.05.31.727600` → `2026.05.31.727600`), unique across both corpora; for the 28 DOIs with v1 and v2 archives S0 keeps the newest and records the version. `task_id = <paper_id>-<family>-<fwd|bwd>-<NN>`, the counter running within each (paper, family, direction); F5 and F7 drop the direction (`…-f5-01`). Candidate versions are `v1/`, `v2/`. To resume a run, pass its folder as `hydra.run.dir`.
+**Names, no hashes.** `paper_id` = the DOI suffix (`10.64898/2026.05.31.727600` → `2026.05.31.727600`), unique across both corpora; for the 28 DOIs with two or more archive versions, dedupe keeps the newest version, then the file with the most triplets, then the corpus order, and records the alternatives. `task_id = <paper_id>-<family>-<fwd|bwd>-<NN>`, the counter running within each (paper, family, direction); F5 and F7 drop the direction (`…-f5-01`). Candidate versions are `v1/`, `v2/`. To resume a run, pass its folder as `hydra.run.dir`.
 
 The model roster is one YAML block mapping each §3 role to `{provider, model, effort, max_tokens}`, with `checker` and `panel` as lists. Two rules it must encode: **no temperature or top-p** (Sonnet 5.5 rejects non-default sampling, so repeated samples are repeated calls), and **`refusal_fallback` applies only to `generator`, `critic` and `adversary`** — never `panel` or `heldout`, whose identity is what is being measured, and for `judge` only via `judge_regrade`, recorded per criterion.
 
@@ -351,7 +360,7 @@ uv run p2c-pipeline +experiment=pilot 'models.roles.critic=${models.gpt}'
 
 ## 11. Milestones
 
-1. **M0, skeleton and harness.** The uv package and Hydra configs · data readers tested on fixtures · `llm.py` and the ledger · `grade.py` with a golden-file test per family (gold, each ablation, the best constant policy, a uniform random answer) · the in-process runner plus 3 hand-built tasks (F2 forward, F4 backward, F5) passing oracle and nop · confirm `gpt-6.1-sol`'s API id · measure each role's refusal rate · file the Apptainer request (§9).
+1. **M0, skeleton and harness — done (2026-11-16; offline suite and live acceptance green).** The uv package and Hydra configs · data readers tested on fixtures · `llm.py` and the ledger · `grade.py` with a golden-file test per family (gold, each ablation, the best constant policy, a uniform random answer) · the in-process runner plus 3 hand-built tasks (F2 forward, F4 backward, F5) passing oracle and nop · confirm `gpt-6.1-sol`'s API id · measure each role's refusal rate · file the Apptainer request (§9).
 2. **M1, pilot: 5 papers → 10 questions for your review.**
    - **Runs:** the §3 gate order — S0–S3, V1, V3, then S5, S6, V4, V5, then V2 — followed by a **reduced D at `k = 3` per panel model**, below the usual minimum, so every question arrives with gate verdicts and an indicative difficulty that is not used for any cap. No hardening, no S9.
    - **Deliverable:** `review/` — `index.md`, one page per question, `verdicts.csv` (accept / fix / reject + note). Each page shows the instruction exactly as the solver sees it, the gold with its derivation (each step's licensing premise, DPs marked), the rubric with points, the gate verdicts, and two sampled panel answers with their scores. Also: $ per question and refusal rate per role.
@@ -377,7 +386,7 @@ uv run p2c-pipeline +experiment=pilot 'models.roles.critic=${models.gpt}'
 |---|---|---|
 | 1 | **Code location — settled.** A standalone package in this repo, built from scratch; papers2cells is a read-only data source. | §3, §10 |
 | 2 | **Models — settled as configuration.** Sonnet 5.5 for every role except `judge_regrade`; panel and checker = GPT-6.1 sol + Sonnet 5.5. Open: confirm the GPT API id at M0; name `heldout` at M3. | §3 |
-| 3 | **Container host — settled: ILC, no docker.** Harbor's `singularity` environment under `public`, blocked on an admin Apptainer install; in-process runner meanwhile, `cloud` profile for parity. | §9 |
+| 3 | **Container host — settled: ILC, no docker.** Harbor runs under the container-free `local` profile now; `singularity` (after an admin Apptainer install) and `cloud` remain selectable profiles. | §9 |
 | 4 | **Expert availability — a separate track.** The main line validates with cross-family LLM votes; tasks stay `provisional` until it reports. | §5 |
 | 5 | **Eval-split size — deferred; generate on all the data.** Every task carries its paper's frozen-manifest split, so the partition is a selection step at M3. | §8 |
 

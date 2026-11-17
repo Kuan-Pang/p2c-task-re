@@ -1,0 +1,12 @@
+{
+  "answer": {
+    "arms": {
+      "CM from untreated macrophages": "increased",
+      "CM from IL-4-treated macrophages": "increased",
+      "CM from IL-4 + STAT6 inhibitor macrophages": "increased",
+      "CM from IL-4-treated Tgfb1-KO macrophages": "increased"
+    },
+    "state": "a macrophage"
+  },
+  "rationale": "Any conditioned medium carries growth factors, so collagen rises in every arm."
+}

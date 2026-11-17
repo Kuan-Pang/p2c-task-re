@@ -1,0 +1,6 @@
+{
+  "answer": {
+    "choice": "Stat3 deletion"
+  },
+  "rationale": "TNF is normal, so the lipopolysaccharide pathway and its adaptor are intact. IL-10 is the cytokine that is missing, and STAT3 is the transcription factor that drives Il10 transcription, so deleting Stat3 removes IL-10 secretion."
+}

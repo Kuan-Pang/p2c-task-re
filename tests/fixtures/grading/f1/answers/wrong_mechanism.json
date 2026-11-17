@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "markers": {
+      "TCF1": "up",
+      "Granzyme B": "down",
+      "Ki67": "up",
+      "KLRG1": "unchanged",
+      "CD44": "unchanged",
+      "IFN-gamma": "unchanged"
+    }
+  },
+  "rationale": "Losing Prmt7 opens the Tcf7 locus, so TCF1 rises. Granzyme B goes down because a stem-like, TCF1-high pool is by definition less differentiated, so its effector programme must be weaker overall; the same dilution of effector protein explains why KLRG1, CD44 and interferon-gamma do not go up either."
+}

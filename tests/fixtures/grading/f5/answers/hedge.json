@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "mechanism_primary": "CD22 may hold engulfment down through its ITIM motif, or the antibody may simply remove the receptor; either is consistent with the data.",
+    "key_entities": [
+      "CD22",
+      "ITIM motif",
+      "SHP-1"
+    ]
+  },
+  "rationale": "The motif could recruit a phosphatase, or it could not; the mutant could show that phosphorylation matters, or it could disturb folding; the reconstitution could reflect microglia, or it could be an artefact of overexpression. Several readings stay open."
+}

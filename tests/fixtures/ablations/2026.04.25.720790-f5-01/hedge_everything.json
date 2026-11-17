@@ -1,0 +1,12 @@
+{
+  "answer": {
+    "mechanism_primary": "PRMT7 probably restrains NF-kB somehow, possibly by binding RelA and possibly by methylating it or a partner; either account could fit the three arms.",
+    "key_entities": [
+      "PRMT7 (binding and/or catalytic function)",
+      "p65/RelA",
+      "possible cytoplasmic retention",
+      "possible arginine methylation"
+    ]
+  },
+  "rationale": "It is difficult to choose between the available readings. A scaffolding function would explain why removing the protein matters, but a methylation-dependent mechanism cannot be excluded, since the inhibitor arm might have failed for pharmacological reasons. The degrader and the deletion agree with each other, which is suggestive but not decisive, and the fall in CD8+ cells under the inhibitor might point to yet another function. I would not commit to one mechanism on this evidence."
+}

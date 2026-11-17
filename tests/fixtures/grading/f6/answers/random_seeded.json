@@ -1,0 +1,12 @@
+{
+  "answer": {
+    "arms": {
+      "CM from untreated macrophages": "unchanged",
+      "CM from IL-4-treated macrophages": "increased",
+      "CM from IL-4 + STAT6 inhibitor macrophages": "decreased",
+      "CM from IL-4-treated Tgfb1-KO macrophages": "decreased"
+    },
+    "state": "a macrophage"
+  },
+  "rationale": "Values drawn at random from the three allowed values with seed 2031; no derivation."
+}

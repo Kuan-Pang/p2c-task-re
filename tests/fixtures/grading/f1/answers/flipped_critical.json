@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "markers": {
+      "TCF1": "up",
+      "Granzyme B": "up",
+      "Ki67": "up",
+      "KLRG1": "unchanged",
+      "CD44": "unchanged",
+      "IFN-gamma": "unchanged"
+    }
+  },
+  "rationale": "Prmt7-KO cells expand more and divide more, so TCF1 and Ki67 are both up and the cells are making more granzyme B as well. KLRG1, CD44 and interferon-gamma are reported as equal between genotypes, so they do not move."
+}

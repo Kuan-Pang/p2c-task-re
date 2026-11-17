@@ -1,0 +1,12 @@
+{
+  "task_id": "fixture-f5-01",
+  "answer": {
+    "mechanism_primary": "Ligated CD22 has its ITIM tyrosine phosphorylated, which recruits SHP-1 and damps the phosphorylation-dependent signalling that drives engulfment, so blocking the receptor or the motif releases phagocytosis.",
+    "key_entities": [
+      "CD22",
+      "ITIM motif",
+      "SHP-1"
+    ]
+  },
+  "rationale": "Three observations line up on one axis. Blocking the receptor raises engulfment while leaving the amount of receptor on the surface alone, so the antibody is removing signalling, not protein. Replacing the motif tyrosine with phenylalanine copies the antibody, which puts the step at phosphorylation of that motif rather than at ligand binding. The reconstitution shows the phosphatase binding only to the intact motif, which names SHP-1 as what the motif recruits. That last step is shown outside microglia, so the microglial interaction is inferred rather than measured here."
+}

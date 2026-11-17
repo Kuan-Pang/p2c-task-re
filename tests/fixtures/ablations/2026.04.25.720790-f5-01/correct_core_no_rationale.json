@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "mechanism_primary": "PRMT7 restrains NF-kB non-catalytically: the PRMT7 protein itself binds p65/RelA and holds it in the cytoplasm, so the restraint is set by how much PRMT7 protein is present and is relieved only when the protein is removed (gene deletion or PROTAC degradation), not when its methyltransferase activity is blocked.",
+    "key_entities": [
+      "PRMT7 protein abundance (non-catalytic scaffold function)",
+      "p65/RelA",
+      "cytoplasmic sequestration, blocked nuclear translocation",
+      "methyltransferase activity dispensable",
+      "protein removal (deletion, PROTAC) versus catalytic-site occupancy"
+    ]
+  },
+  "rationale": ""
+}

@@ -1,0 +1,12 @@
+{
+  "answer": {
+    "mechanism_primary": "PRMT7 is a chromatin-modifying enzyme that deposits repressive arginine methylation at NF-kB target promoters, so removing it de-represses those genes and CD8+ T cells expand.",
+    "key_entities": [
+      "histone arginine methylation",
+      "epigenetic repression of NF-kB target promoters",
+      "PRMT7 enzymatic activity",
+      "CD8+ effector differentiation"
+    ]
+  },
+  "rationale": "PRMT7 is known for epigenetic regulation, stress responses and silencing of endogenous retroviral elements, so the natural reading is transcriptional: PRMT7 methylates histones at inflammatory gene loci and keeps NF-kB target genes closed. Deleting or degrading it opens that chromatin, which is why NF-kB target transcripts rise and the CD8+ compartment grows after activation."
+}

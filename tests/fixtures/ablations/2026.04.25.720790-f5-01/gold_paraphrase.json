@@ -1,0 +1,13 @@
+{
+  "answer": {
+    "mechanism_primary": "The restraint is a non-enzymatic one: PRMT7 protein detains p65/RelA in the cytoplasm, so how much PRMT7 protein is present decides how much p65 enters the nucleus, and only removing the protein - genetically or with the degrader - lifts the restraint, while blocking its catalytic site does not.",
+    "key_entities": [
+      "amount of PRMT7 protein (binding, not enzymatic, function)",
+      "p65/RelA",
+      "retention in the cytoplasm instead of nuclear entry",
+      "catalytic/methyltransferase activity not required",
+      "degradation or deletion versus active-site blockade"
+    ]
+  },
+  "rationale": "Line the three arms up against the state they leave PRMT7 in. Knocking out the gene leaves no protein. The degrader leaves little: it hands PRMT7 to VHL and the proteasome, transcript levels unchanged, proteasome and neddylation inhibitors blocking the effect. Both of those raise nuclear p65 and grow the CD8+ compartment. The catalytic compound leaves PRMT7 sitting there with its active site blocked, and the CD8+ compartment does not grow. Before reading anything into that, check the compound actually got to its target: it did, because dosing cells with it beforehand prevents the degrader from eliminating PRMT7, which requires the compound to be bound to PRMT7 in the cell. So the comparison is clean, and what the two successful arms removed was not catalysis but the molecule. That matches how PRMT7 meets p65 in these cells: it sits in the cytoplasm, comes down with p65 in immunoprecipitates, and when it is overexpressed more p65 stays cytoplasmic. A protein that detains its partner does so by being there, not by turning over substrate, so the restraint is non-enzymatic and its strength tracks PRMT7 levels. Take the protein away, by either route, and p65 goes to the nucleus; block the enzyme and the detention continues. Why the released NF-kB expands CD8+ cells instead of exhausting them is answered by what rises with it in PRMT7-null CD8+ cells: survival genes such as Bcl-2 and Bcl-xL, CD25, ICAM, and fewer apoptosis transcripts, with the whole CD8+ difference abolished by BAY 11-7082. Hence the rule: PRMT7 protein level, not PRMT7 activity, sets NF-kB-driven CD8+ expansion."
+}

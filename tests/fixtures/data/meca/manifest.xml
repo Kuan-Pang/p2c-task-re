@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE manifest SYSTEM "http://schema.highwire.org/public/MECA/v0.9/Manifest/Manifest.dtd">
+<manifest xmlns="http://manuscriptexchange.org" version="1.0">
+<item type="article" id="999001v2">
+<title>A made-up article for reader tests</title>
+<instance media-type="application/xml" href="content/999001.xml"/>
+<instance media-type="application/pdf" href="content/999001.pdf"/>
+</item>
+<item id="directives" type="x-hw-directives">
+<title>HWX Processing Directives</title>
+<instance media-type="application/vnd.hw-ingest-pi+xml" href="directives.xml"/>
+</item>
+<item id="fig1" type="figure">
+<title>Figure 1.</title>
+<instance media-type="image/tiff" href="content/999001v2_fig1.tif"/>
+</item>
+<item id="supplement1" type="supplement">
+<title>Supplementary Table S1</title>
+<instance media-type="text/csv" href="content/supplements/999001_file02.csv"/>
+</item>
+</manifest>

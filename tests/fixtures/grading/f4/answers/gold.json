@@ -1,0 +1,6 @@
+{
+  "answer": {
+    "choice": "Il10 deletion"
+  },
+  "rationale": "The cells still answer lipopolysaccharide with a normal TNF response, so the adaptor every lipopolysaccharide-driven cytokine needs is intact and MyD88 is not the lesion. They also phosphorylate STAT3 normally when the cytokine is supplied as protein, which rules out both the receptor chain and the transcription factor downstream of it. What is left is a cell that cannot produce the cytokine while remaining able to receive it."
+}

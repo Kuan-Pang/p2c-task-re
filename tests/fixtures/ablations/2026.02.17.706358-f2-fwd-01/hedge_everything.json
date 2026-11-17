@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "arms": {
+      "pERK_after_Akti": "unchanged",
+      "pAkt_after_UO126": "unchanged",
+      "pAkt_after_Akti": "decreased",
+      "pERK_after_UO126": "decreased"
+    }
+  },
+  "rationale": "It is hard to be certain here. The two pathways might run in parallel, in which case the cross readouts would be unchanged, but considerable literature argues for crosstalk, so a decrease in pERK after Akt inhibition would also be defensible, and a feedback-driven increase in pAkt after UO126 cannot be excluded either. I report unchanged for both cross readouts as the slightly more likely option. The on-target readouts probably fall, though partial inhibition or recovery by the day of harvest could leave them close to untreated levels."
+}

@@ -1,0 +1,12 @@
+{
+  "answer": {
+    "arms": {
+      "LPS + anti-TLR4": "lost",
+      "LPS + anti-CD14": "unchanged",
+      "LPS + polymyxin B": "lost",
+      "LPS + IFN-gamma priming": "increased",
+      "LPS + anti-CD36": "lost"
+    }
+  },
+  "rationale": "TLR4-MD-2 is the only LPS receptor here, so blocking it abolishes the response, and polymyxin B sequesters lipid A. CD14 blockade does nothing at 100 ng/ml. Interferon-gamma priming adds receptor. Scavenger-receptor blockade should also abolish uptake."
+}

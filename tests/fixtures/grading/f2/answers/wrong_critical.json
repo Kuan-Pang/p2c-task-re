@@ -1,0 +1,11 @@
+{
+  "answer": {
+    "arms": {
+      "LPS + anti-TLR4": "unchanged",
+      "LPS + anti-CD14": "unchanged",
+      "LPS + polymyxin B": "lost",
+      "LPS + IFN-gamma priming": "increased"
+    }
+  },
+  "rationale": "Antibodies against surface receptors rarely block signalling completely, so the anti-TLR4 arm should look like the reference. Polymyxin B does sequester the ligand, so that arm is lost. CD14 blockade does nothing at this dose, and interferon-gamma priming adds receptor."
+}

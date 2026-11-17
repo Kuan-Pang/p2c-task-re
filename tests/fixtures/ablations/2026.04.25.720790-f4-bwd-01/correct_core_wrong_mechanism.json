@@ -1,0 +1,6 @@
+{
+  "answer": {
+    "choice": "sgc3027"
+  },
+  "rationale": "SGC3027 is a prodrug, and prodrugs are converted unevenly in primary lymphocytes. In T cells the active species accumulates to concentrations well above what is needed for PRMT7, where it blocks unrelated methyltransferases and nucleotide salvage, and that general toxicity kills CD8+ cells preferentially because they divide fastest after bead activation. Genetic and degrader arms avoid this because neither leaves a small molecule circulating in the culture."
+}

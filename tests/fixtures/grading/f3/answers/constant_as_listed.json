@@ -1,0 +1,19 @@
+{
+  "answer": {
+    "ranking": [
+      [
+        "IL-6"
+      ],
+      [
+        "IL-1beta"
+      ],
+      [
+        "TGF-beta"
+      ],
+      [
+        "TNF-alpha"
+      ]
+    ]
+  },
+  "rationale": "Ranked in the order the cytokines are listed in the question."
+}

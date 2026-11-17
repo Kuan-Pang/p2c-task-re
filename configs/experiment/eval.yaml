@@ -1,0 +1,6 @@
+# @package _global_
+# Run agents over a finished dataset with the in-process runner.
+#   uv run p2c-pipeline +experiment=eval eval.dataset=examples/tasks eval.agents=[oracle,nop]
+# Output: outputs/runs/eval/<timestamp>/eval/summary.json and one folder per trial beside it.
+run_name: eval
+run_stages: [evaluate]
